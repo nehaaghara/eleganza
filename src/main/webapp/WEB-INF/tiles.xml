@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+  
+<tiles-definitions>
+    <!--Admin Menu-->
+    <definition name="com.neha.adminLayout" template="/WEB-INF/JSP/Layout/adminLayout.jsp">
+        <put-attribute name="adminHeader" value="/WEB-INF/JSP/Layout/adminHeader.jsp" />
+        <put-attribute name="adminMenu" value="/WEB-INF/JSP/Layout/adminMenu.jsp" />
+        <put-attribute name="adminFooter" value="/WEB-INF/JSP/Layout/adminFooter.jsp" />
+    </definition>
+    <definition name="com.neha.adminIndex" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/adminIndex.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <definition name="com.neha.addAdvertisementTopic" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/addAdvertisementTopic.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <definition name="com.neha.viewAdvertisementTopic" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/viewAdvertisementTopic.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+     <definition name="com.neha.addUserInterest" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/User/addUserInterest.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <definition name="com.neha.viewAdvertisementTopic" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/User/viewUserInterest.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <!--Admin Menu-->
+</tiles-definitions>
+

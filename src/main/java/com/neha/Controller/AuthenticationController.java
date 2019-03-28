@@ -1,0 +1,86 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.neha.Controller;
+
+
+import java.math.BigInteger;
+import java.util.List;
+import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+/**
+ *
+ * @author ITMCS-PC
+ */
+@Controller
+public class AuthenticationController {
+
+//    @Autowired
+//    AuthenticationService authenticationService;
+//    
+//      
+//    @Autowired
+//    ResultService resultService;
+//
+//    ModelAndView mv=new ModelAndView();
+//    
+//   
+//    @RequestMapping(value = "/loginpage")
+//    public String login(Model model, HttpServletRequest req) {
+//        String emailAddress = req.getParameter("emailAddress");
+//        String password = req.getParameter("password");
+//        TblUser tbluser = new TblUser();
+//        tbluser.setEmailAddress(emailAddress);
+//        tbluser.setPassword(password);
+//        List<TblUser> lstuser = authenticationService.loginservice(tbluser);
+//        System.out.println("lstUser::" + lstuser);
+//        HttpSession session = req.getSession(true);
+//        lstuser.get(0).setUserName(lstuser.get(0).getUserName());
+//        System.out.println("role::" + lstuser.get(0).getRoleFk().getRolePk());
+//        session.setAttribute("UserSession", lstuser.get(0));
+//        if (!lstuser.isEmpty()) {
+//            System.out.println("in controller");
+//            if (lstuser.get(0).getRoleFk().getRolePk().equals(new BigInteger("1"))) {
+//                
+//                return "com.damani.adminIndex";
+//            }
+//           if (lstuser.get(0).getRoleFk().getRolePk().equals(new BigInteger("2"))) {
+//                  Map<List<TblInstitute>, List<TblBranch>> allinstituteandbranch=resultService.resultpagedataservice();
+//                  model.addAttribute("allinstituteandbranch", allinstituteandbranch);
+//                  return "view/User/userauthentication";
+//            }
+//        }
+//        return "redirect:/loginindex";
+//    }
+//    
+//
+//    @RequestMapping("/registerpage")
+//    public String register(Model model,HttpServletRequest req) {
+//        TblRole tblRole = new TblRole();
+//        tblRole.setRolePk(new BigInteger("2"));
+//        String fullname = req.getParameter("fullname");
+//        String username = req.getParameter("userName");
+//        String Email = req.getParameter("emailAddress");
+//        String password = req.getParameter("password");
+//        String conformpassword = req.getParameter("conformpassword");
+//        TblUser tblUser = new TblUser();
+//        tblUser.setFullname(fullname);
+//        tblUser.setUserName(username);
+//        tblUser.setEmailAddress(Email);
+//        tblUser.setPassword(password);
+//        tblUser.setConformpassword(conformpassword);
+//        tblUser.setRoleFk(tblRole);
+//        authenticationService.registrationservice(tblUser);
+//        return "redirect:/loginindex";
+//       
+//    }
+}

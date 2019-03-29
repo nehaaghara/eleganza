@@ -6,7 +6,7 @@
 package com.neha.RepoImpl;
 
 import com.neha.Repo.AuthenticationRepo;
-import com.neha.dal.CommonDAO;
+import com.neha.dal.CommonDao;
 import com.neha.model.TblUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
 public class AuthenticationRepoImpl implements AuthenticationRepo{
 
     @Autowired
-    CommonDAO commonDAO;
+    CommonDao commonDAO;
     
     @Override
     public void registerrepo(TblUser tblUser) {

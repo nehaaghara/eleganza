@@ -20,11 +20,11 @@ public class IndexController {
     @RequestMapping(value = "/")
     public String index() {
         System.out.println("vikas");
-        return "Login/userLogin";
+        return "redirect:/dashboard";
     }
    @RequestMapping(value="/dashboard")
     public String dashboard(){
-        return "Login/registration";
+        return "com.neha.adminIndex";
     }
     @RequestMapping(value = "/loginindex")
     public String login() {
@@ -33,7 +33,7 @@ public class IndexController {
 
     @RequestMapping(value = "/registrationindex")
     public String registration() {
-        return "Login/registration";
+        return "/Login/registration";
     }
     
     @RequestMapping(value="/logout")

@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 package com.neha.dal;
+import static com.neha.dal.CommonDao.MSGDELETEFAILED;
 
-import com.neha.dal.OperationTypeEnum;
-import static com.neha.dal.CommonDAO.MSGDELETEFAILED;
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -32,12 +32,12 @@ import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author BigGoal
+ * @author ITMCS
  */
 @Repository
-public class CommonDAO extends HibernateTemplate {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(CommonDAO.class);
+public class CommonDao extends HibernateTemplate {
+    
+    private static final Logger LOGGER = LoggerFactory.getLogger(CommonDao.class);
     static final String ALIAS = "alias";
     static final String FIRSTINDEX = "firstIndex";
     static final String MAXRESULTS = "maxResults";
@@ -49,7 +49,7 @@ public class CommonDAO extends HibernateTemplate {
 //	ExceptionHandlerService exceptionHandlerService; 
 
     @Autowired
-    public CommonDAO(SessionFactory sessionFactory) {
+    public CommonDao(SessionFactory sessionFactory) {
 
         super.setSessionFactory(sessionFactory);
 
@@ -60,7 +60,7 @@ public class CommonDAO extends HibernateTemplate {
         Session session = null;
         Transaction transaction = null;
         Serializable serializable = null;
-        LocalSessionManager manager = new LocalSessionManager();
+        LocalSessionmanager manager = new LocalSessionmanager();
 
         try {
             session = manager.getSession(sessionFactory);
@@ -89,7 +89,7 @@ public class CommonDAO extends HibernateTemplate {
 
         Session session = null;
         Transaction transaction = null;
-        LocalSessionManager manager = new LocalSessionManager();
+        LocalSessionmanager manager = new LocalSessionmanager();
 
         try {
             session = manager.getSession(sessionFactory);
@@ -116,7 +116,7 @@ public class CommonDAO extends HibernateTemplate {
 
         Session session = null;
         Transaction transaction = null;
-        LocalSessionManager manager = new LocalSessionManager();
+        LocalSessionmanager manager = new LocalSessionmanager();
 
         try {
             session = manager.getSession(sessionFactory);
@@ -145,7 +145,7 @@ public class CommonDAO extends HibernateTemplate {
 
         Session session = null;
         Transaction transaction = null;
-        LocalSessionManager manager = new LocalSessionManager();
+        LocalSessionmanager manager = new LocalSessionmanager();
 
         try {
             session = manager.getSession(sessionFactory);
@@ -177,7 +177,7 @@ public class CommonDAO extends HibernateTemplate {
 
         Session session = null;
         Transaction transaction = null;
-        LocalSessionManager manager = new LocalSessionManager();
+        LocalSessionmanager manager = new LocalSessionmanager();
 
         try {
             session = manager.getSession(sessionFactory);
@@ -205,7 +205,7 @@ public class CommonDAO extends HibernateTemplate {
 
         Session session = null;
         Transaction transaction = null;
-        LocalSessionManager manager = new LocalSessionManager();
+        LocalSessionmanager manager = new LocalSessionmanager();
 
         try {
             session = manager.getSession(sessionFactory);
@@ -236,7 +236,7 @@ public class CommonDAO extends HibernateTemplate {
         Session session = null;
         Criteria criteria = null;
         List<T> list = null;
-        LocalSessionManager manager = new LocalSessionManager();
+        LocalSessionmanager manager = new LocalSessionmanager();
 
         try {
             session = manager.getSession(sessionFactory);
@@ -299,7 +299,7 @@ public class CommonDAO extends HibernateTemplate {
     public <T> List<T> executeSqlSelect(String query, Map<String, Object> column) {
         List<T> list = null;
         Session session = null;
-        LocalSessionManager manager = new LocalSessionManager();
+        LocalSessionmanager manager = new LocalSessionmanager();
 
         try {
             session = manager.getSession(sessionFactory);
@@ -323,7 +323,7 @@ public class CommonDAO extends HibernateTemplate {
     public <T> List<T> executeSelect(String query, Map<String, Object> column) {
         List<T> list = null;
         Session session = null;
-        LocalSessionManager manager = new LocalSessionManager();
+        LocalSessionmanager manager = new LocalSessionmanager();
 
         try {
             session = manager.getSession(sessionFactory);
@@ -347,7 +347,7 @@ public class CommonDAO extends HibernateTemplate {
     public Integer executeUpdate(String query, Map<String, Object> column) {
         Integer result = null;
         Session session = null;
-        LocalSessionManager manager = new LocalSessionManager();
+        LocalSessionmanager manager = new LocalSessionmanager();
 
         try {
             session = manager.getSession(sessionFactory);
@@ -371,7 +371,7 @@ public class CommonDAO extends HibernateTemplate {
     public Integer executeSqlUpdate(String query, Map<String, Object> column) {
         Integer result = null;
         Session session = null;
-        LocalSessionManager manager = new LocalSessionManager();
+        LocalSessionmanager manager = new LocalSessionmanager();
 
         try {
             session = manager.getSession(sessionFactory);
@@ -443,7 +443,7 @@ public class CommonDAO extends HibernateTemplate {
         int updatedCount = 0;
 
         Session session = null;
-        LocalSessionManager manager = new LocalSessionManager();
+        LocalSessionmanager manager = new LocalSessionmanager();
 
         try {
             session = manager.getSession(sessionFactory);
@@ -475,7 +475,7 @@ public class CommonDAO extends HibernateTemplate {
 
     public <T> List<T> findEntity(Class classObj, Object... values) {
         //System.out.println("in a find entity...");
-        LocalSessionManager manager = new LocalSessionManager();
+        LocalSessionmanager manager = new LocalSessionmanager();
         Session session = manager.getSession(sessionFactory);
         Criteria criteria;
         List<T> lst;
@@ -486,7 +486,7 @@ public class CommonDAO extends HibernateTemplate {
             try {
 //            throw new ExceptionHandlerService("Arguments Must be triplet of [field, expression(e.g. eq,lt,gt...), value]");
             } catch (Exception ex) {
-                java.util.logging.Logger.getLogger(CommonDAO.class.getName()).log(Level.SEVERE, null, ex);
+                java.util.logging.Logger.getLogger(CommonDao.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 
@@ -549,7 +549,7 @@ public class CommonDAO extends HibernateTemplate {
                         try {
 //                        throw new ExceptionHandlerService("Order by can be ASC or DESC only. use Enum for to specify this.");
                         } catch (Exception ex) {
-                            java.util.logging.Logger.getLogger(CommonDAO.class.getName()).log(Level.SEVERE, null, ex);
+                            java.util.logging.Logger.getLogger(CommonDao.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }
                     break;
@@ -565,7 +565,7 @@ public class CommonDAO extends HibernateTemplate {
 
         Session session = null;
         Transaction transaction = null;
-        LocalSessionManager manager = new LocalSessionManager();
+        LocalSessionmanager manager = new LocalSessionmanager();
         try {
             session = manager.getSession(sessionFactory);
             transaction = session.beginTransaction();
@@ -585,12 +585,14 @@ public class CommonDAO extends HibernateTemplate {
         }
     }
 
+   
+
 }
 
-class LocalSessionManager {
+class LocalSessionmanager {
 
     private boolean isNew = false;
-    private static final Logger LOGGER = LoggerFactory.getLogger(CommonDAO.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CommonDao.class);
 
     public Session getSession(SessionFactory sessionFactory) {
         Session session;
@@ -612,5 +614,5 @@ class LocalSessionManager {
             SessionFactoryUtils.closeSession(session);
         }
     }
-
+    
 }

@@ -6,7 +6,7 @@
 package com.neha.RepoImpl;
 
 import com.neha.Repo.AdvertisementRepository;
-import com.neha.dal.CommonDAO;
+import com.neha.dal.CommonDao;
 import com.neha.dal.OperationTypeEnum;
 import com.neha.model.TblAdvertisementTopic;
 import java.math.BigInteger;
@@ -22,7 +22,7 @@ import org.springframework.stereotype.Repository;
 public class AdvertisementRepositoryImpl implements AdvertisementRepository{
 
     @Autowired
-    CommonDAO commonDAO;
+    CommonDao commonDAO;
     
     @Override
     public TblAdvertisementTopic saveAdvertismentTopic(TblAdvertisementTopic tblAdvertisementTopic) {

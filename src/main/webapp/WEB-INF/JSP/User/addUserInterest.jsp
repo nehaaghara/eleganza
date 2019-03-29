@@ -31,12 +31,12 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">Add  Your Interest </h3>
                     </div>
-                    <form:form action="${pageContext.servletContext.contextPath}/saveUserInterest" modelAttribute="tblUserInterest" method="post">
-                        <form:hidden path="topic_Id" name="topic_Id" />
+                    <form:form action="${pageContext.servletContext.contextPath}/saveuserinterest" modelAttribute="tblUserInterest" method="post">
+                        <form:hidden path="interestId" name="interestId" />
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="userId">Enter Your User Name</label>
-                                <form:input path="userId.userId" name="title" class="form-control" id="userId.userId" title="userId"  placeholder="Enter Advertisement Topic" autofocus="on"/>
+                                <form:input path="userId.userid" name="title" class="form-control" id="userId" title="userId"  placeholder="Enter Advertisement Topic" autofocus="on"/>
                             </div>
                         </div>
                         <div class="box-body">
@@ -44,13 +44,8 @@
                                 <label for="Title">Select Your Interested Topic</label>
                                 <form:select path="topic_Id.topic_Id" title="topic_Id" name="topic_Id.topic_Id" id="topic_Id" class="form-control select2" style="width: 100%;">
                                     <option value="-1" disabled="true" selected="true">Please Select</option>
-                                    <c:forEach items='${lstInstitute}' var='entry'>
-                                        <c:if test="${entry.institutePk ne tblInstituteBranch.instituteFk.institutePk}">
-                                            <option value="${entry.institutePk}">${entry.instituteName}</option> 
-                                        </c:if>
-                                        <c:if test="${entry.institutePk eq tblInstituteBranch.instituteFk.institutePk}">
-                                            <option value="${entry.institutePk}" selected="true">${entry.instituteName}</option> 
-                                        </c:if>
+                                    <c:forEach items='${lstAdvertisementTopics}' var='entry'>
+                                        <option value="${entry.topic_Id}">${entry.title}</option> 
                                     </c:forEach>  
                                 </form:select>
                             </div>
@@ -59,7 +54,7 @@
                         <div class="box-footer">
                             <input type="submit" name="save" value="Save & Exit" class="btn btn-primary"/>
                             <input type="submit" name="saveAndNew" value="Save & New" class="btn btn-primary"/>
-                            <input type="button" name="action" value="Cancel" class="btn btn-primary" onclick="window.location.href = '${pageContext.servletContext.contextPath}/viewAdvertisement'"/>
+                            <input type="button" name="action" value="Cancel" class="btn btn-primary" onclick="window.location.href = '${pageContext.servletContext.contextPath}/viewuserinterest'"/>
                         </div>
                     </form:form>
                 </div>

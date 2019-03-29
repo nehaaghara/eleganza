@@ -6,6 +6,9 @@
 package com.neha.Controller;
 
 
+import com.neha.Service.AuthenticationService;
+import com.neha.model.TblUser;
+import com.neha.model.TblUserRole;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
@@ -24,63 +27,55 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AuthenticationController {
 
-//    @Autowired
-//    AuthenticationService authenticationService;
-//    
-//      
-//    @Autowired
-//    ResultService resultService;
-//
-//    ModelAndView mv=new ModelAndView();
-//    
-//   
-//    @RequestMapping(value = "/loginpage")
-//    public String login(Model model, HttpServletRequest req) {
-//        String emailAddress = req.getParameter("emailAddress");
-//        String password = req.getParameter("password");
-//        TblUser tbluser = new TblUser();
-//        tbluser.setEmailAddress(emailAddress);
-//        tbluser.setPassword(password);
-//        List<TblUser> lstuser = authenticationService.loginservice(tbluser);
-//        System.out.println("lstUser::" + lstuser);
-//        HttpSession session = req.getSession(true);
-//        lstuser.get(0).setUserName(lstuser.get(0).getUserName());
-//        System.out.println("role::" + lstuser.get(0).getRoleFk().getRolePk());
-//        session.setAttribute("UserSession", lstuser.get(0));
-//        if (!lstuser.isEmpty()) {
-//            System.out.println("in controller");
-//            if (lstuser.get(0).getRoleFk().getRolePk().equals(new BigInteger("1"))) {
-//                
-//                return "com.damani.adminIndex";
-//            }
-//           if (lstuser.get(0).getRoleFk().getRolePk().equals(new BigInteger("2"))) {
-//                  Map<List<TblInstitute>, List<TblBranch>> allinstituteandbranch=resultService.resultpagedataservice();
-//                  model.addAttribute("allinstituteandbranch", allinstituteandbranch);
-//                  return "view/User/userauthentication";
-//            }
-//        }
-//        return "redirect:/loginindex";
-//    }
-//    
-//
-//    @RequestMapping("/registerpage")
-//    public String register(Model model,HttpServletRequest req) {
-//        TblRole tblRole = new TblRole();
-//        tblRole.setRolePk(new BigInteger("2"));
-//        String fullname = req.getParameter("fullname");
-//        String username = req.getParameter("userName");
-//        String Email = req.getParameter("emailAddress");
-//        String password = req.getParameter("password");
-//        String conformpassword = req.getParameter("conformpassword");
-//        TblUser tblUser = new TblUser();
-//        tblUser.setFullname(fullname);
-//        tblUser.setUserName(username);
-//        tblUser.setEmailAddress(Email);
-//        tblUser.setPassword(password);
-//        tblUser.setConformpassword(conformpassword);
-//        tblUser.setRoleFk(tblRole);
-//        authenticationService.registrationservice(tblUser);
-//        return "redirect:/loginindex";
-//       
-//    }
+   @Autowired
+   AuthenticationService authenticationService;
+    
+      
+    
+
+    ModelAndView mv=new ModelAndView();
+    
+   
+    @RequestMapping(value = "/loginpage")
+    public String login(HttpServletRequest req) {
+       return "";
+    }
+    
+
+    @RequestMapping("/registration")
+    public String register(HttpServletRequest req) {
+        System.out.println("controller");
+        TblUserRole  tblUserRole=new TblUserRole();
+        TblUser tblUser =new TblUser();
+        String firstname = req.getParameter("firstname");
+        String lastname = req.getParameter("lastname");
+        String email = req.getParameter("email");
+        String gender = req.getParameter("gender");
+        String address = req.getParameter("address");
+        String city = req.getParameter("city");
+        int pincode = Integer.parseInt(req.getParameter("pincode"));
+        String state = req.getParameter("state");
+        int phonenumber = Integer.parseInt(req.getParameter("phonenumber"));
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        String conformpassword = req.getParameter("conformpassword");
+        tblUser.setFirst_name(firstname);
+        tblUser.setLast_name(lastname);
+        tblUser.setEmail_address(email);
+        tblUser.setGender(gender);
+        tblUser.setAddress(address);
+        tblUser.setState(state);
+        tblUser.setCity(city);
+        tblUser.setPincode(pincode);
+        tblUser.setPassword(password);
+        tblUser.setConformpassword(conformpassword);
+        tblUser.setContect(phonenumber);
+        tblUser.setUsername(username);
+        tblUserRole.setRolePK(new BigInteger("2"));
+        tblUser.setTblUserRole(tblUserRole);
+        tblUser.setFlag(true);
+        authenticationService.registerservice(tblUser);
+        
+       return "redirect:/registrationindex";
+    }
 }

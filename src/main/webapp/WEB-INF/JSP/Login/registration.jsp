@@ -13,7 +13,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>DIAN | UBL OASIS</title>
+        <title>Eleganza</title>
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.6 -->
@@ -41,40 +41,126 @@
     <body class="hold-transition register-page">
         <div class="register-box">
             <div class="register-logo">
-                <b>UBL</b>OSIS
+                <b>Ele</b>ganza
             </div>
             <div class="register-box-body">
                 <p id="responseReg" class="login-box-msg" style="display:none"></p>
 
-                <form action="registerpage" role="form" id="form" onsubmit="return submitRegister();" method="post">
+                <form action="${pageContext.servletContext.contextPath}/registration" method="get">
                     <div id="otpSentModel">
-                        <p class="login-box-msg">Register_new_memberShip</p>
+                        <p class="login-box-msg">Register for Eleganza</p>
                         <div class="form-group has-feedback">
-                            <input type="text" id="fullname" path="fullname" class="form-control" name="fullname" title="Full name" placeholder="Full name"/>
+                            <input type="text"   class="form-control" name="firstname" title="Full name" placeholder="First Name"/>
                             <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                            <span for="fullName" class="help-block"><form:errors path="fullName"/></span>
+                              <span for="emailAddress" class="help-block"><form:errors path="emailAddress"/></span>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <input type="text"  path="fullname" class="form-control" name="lastname" title="Full name" placeholder="Last Name"/>
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                              <span for="emailAddress" class="help-block"><form:errors path="emailAddress"/></span>
 
                         </div>
                         <div class="form-group has-feedback">
-                            <input type="text" id="username" path="userName" name="userName" class="form-control"  title="User name" placeholder="User name" cssClass="form-control" />    
+                            <input type="email"  path="fullname" class="form-control" name="email" title="Full name" placeholder="Email"/>
                             <span class="glyphicon glyphicon-user form-control-feedback"></span>
-                            <span for="userName" class="help-block"><form:errors path="userName"/></span>
-                        </div>
-                        <div class="form-group has-feedback">
-                            <input type="email" id="email" path="emailAddress" name="emailAddress" class="form-control" title="Email" placeholder="Email" cssClass="form-control" />
-                            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                             <span for="emailAddress" class="help-block"><form:errors path="emailAddress"/></span>
+
+                        </div> 
+                       
+                        <div class="form-group has-feedback">    
+                        <input type="radio" name="gender" value="male" checked> Male
+                        <input type="radio" name="gender" value="female"> Female    
+                          <span class="glyphicon glyphicon-user form-control-feedback"></span>
                             <span for="emailAddress" class="help-block"><form:errors path="emailAddress"/></span>
                         </div>
+                         <div class="form-group has-feedback">
+                             <textarea  class="form-control" cols="25" rows="20" name="address" title="Full name" placeholder="Address"></textarea>
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                             <span for="emailAddress" class="help-block"><form:errors path="emailAddress"/></span>
+
+                        </div>
+                         <div class="form-group has-feedback">
+                            <input type="text"   class="form-control" name="city" title="Full name" placeholder="Enter City"/>
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                             <span for="emailAddress" class="help-block"><form:errors path="emailAddress"/></span>
+
+                        </div>   
+                         
+                         <div class="form-group has-feedback">
+                            <input type="text"   class="form-control" name="pincode" title="Full name" placeholder="PinCode NO.."/>
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                            <span for="emailAddress" class="help-block"><form:errors path="emailAddress"/></span>
+
+                        </div>
+                            
                         <div class="form-group has-feedback">
-                            <input type="password" id="password" path="password" name="password" class="form-control" title="Password" placeholder="Password" cssClass="form-control" />    
-                            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-                            <span for="password" class="help-block"><form:errors path="password"/></span>
+                             <select name="state" path="state" name="state"  id="shippingstateid" style="width: 199px">
+                                                        <option value="">Select State</option>
+                                                        <option value="AS">Assam</option>
+                                                        <option value="BR">Bihar</option>
+                                                        <option value="CT">Chhattisgarh</option>
+                                                        <option value="GA">Goa</option>
+                                                        <option value="GJ">Gujarat</option>
+                                                        <option value="HR">Haryana</option>
+                                                        <option value="JH">Jharkhand</option>
+                                                        <option value="KA">Karnataka</option>
+                                                        <option value="KL">Kerala</option>
+                                                        <option value="MP">Madhya Pradesh</option>
+                                                        <option value="MH">Maharashtra</option>
+                                                        <option value="MN">Manipur</option>
+                                                        <option value="ML">Meghalaya</option>
+                                                        <option value="MZ">Mizoram</option>
+                                                        <option value="NL">Nagaland</option>
+                                                        <option value="OR">Orissa</option>
+                                                        <option value="PB">Punjab</option>
+                                                        <option value="RJ">Rajasthan</option>
+                                                        <option value="SK">Sikkim</option>
+                                                        <option value="TN">Tamil Nadu</option>
+                                                        <option value="TS">Telangana</option> 
+                                                        <option value="TR">Tripura</option>
+                                                        <option value="UK">Uttarakhand</option>
+                                                        <option value="UP">Uttar Pradesh</option>
+                                                        <option value="WB">West Bengal</option>
+                                                        <option value="AN">Andaman and Nicobar Islands</option>
+                                                        <option value="CH">Chandigarh</option>
+                                                        <option value="DN">Dadar and Nagar Haveli</option>
+                                                        <option value="DD">Daman and Diu</option>
+                                                        <option value="DL">Delhi</option>
+                                                        <option value="LD">Lakshadeep</option>
+                                                        <option value="PY">Pondicherry (Puducherry)</option>
+                                                    </select>
+                              <span for="emailAddress" class="help-block"><form:errors path="emailAddress"/></span>
+
+                        </div> 
+                         <div class="form-group has-feedback">
+                            <input type="text"   class="form-control" name="phonenumber" title="Full name" placeholder="ContrctNo.."/>
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                             <span for="emailAddress" class="help-block"><form:errors path="emailAddress"/></span>
+
+                        </div>   
+                        <div class="form-group has-feedback">
+                            <input type="text"   class="form-control" name="username" title="Full name" placeholder="User Name"/>
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                              <span for="emailAddress" class="help-block"><form:errors path="emailAddress"/></span>
+
                         </div>
                         <div class="form-group has-feedback">
-                            <input type="password" id="retypePassword" name="conformpassword" class="form-control" title="Retype password"  placeholder="Retype password">
-                            <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
-                            <span id="retypePasswordCheckResult"></span>
-                        </div>
+                            <input type="password"   class="form-control" name="password" title="Full name" placeholder="Password"/>
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                              <span for="emailAddress" class="help-block"><form:errors path="emailAddress"/></span>
+
+                        </div> 
+                        <div class="form-group has-feedback">
+                            <input type="password"   class="form-control" name="conformpassword" title="Full name" placeholder="Retry Password"/>
+                            <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                              <span for="emailAddress" class="help-block"><form:errors path="emailAddress"/></span>
+
+                        </div>     
+                            
+                           
+                        
+                        
+                       
                     </div>
 
                     <div class="row">

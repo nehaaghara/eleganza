@@ -7,6 +7,7 @@ package com.neha.Service;
 
 import com.neha.model.TblUser;
 import java.math.BigInteger;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 
@@ -17,5 +18,5 @@ import org.springframework.stereotype.Service;
 @Service
 public interface UserProfileService {
     public String updateProfileInformation(TblUser tblUser,HttpServletRequest request);
-  
+   public List<TblUser> fetchAllUser();
 }

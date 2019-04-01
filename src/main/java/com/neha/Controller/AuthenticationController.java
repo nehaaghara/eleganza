@@ -5,7 +5,10 @@
  */
 package com.neha.Controller;
 
+import com.neha.Service.AdvertisementService;
 import com.neha.Service.AuthenticationService;
+import com.neha.Service.PromationCampaningService;
+import com.neha.Service.UserProfileService;
 import com.neha.model.TblUser;
 import com.neha.model.TblUserRole;
 import java.math.BigInteger;
@@ -29,11 +32,20 @@ public class AuthenticationController {
 
     @Autowired
     AuthenticationService authenticationService;
+    
+    @Autowired
+    AdvertisementService advertisementService;
+    
+    @Autowired
+    PromationCampaningService promotionCampaningService;
+    
+    @Autowired
+            UserProfileService userService;
 
     ModelAndView mv = new ModelAndView();
 
     @RequestMapping(value = "/loginpage", method = RequestMethod.GET)
-    public String login(HttpServletRequest req) {
+    public String login(HttpServletRequest req,Model model) {
         TblUser tblUser = new TblUser();
         String email = req.getParameter("emailAddress");
         String password = req.getParameter("password");
@@ -41,10 +53,14 @@ public class AuthenticationController {
         tblUser.setPassword(password);
         List<TblUser> lstuser = authenticationService.loginservice(tblUser);
         HttpSession session = req.getSession(true);
+        if(lstuser!=null && !lstuser.isEmpty()){
         session.setAttribute("sessionuser", lstuser.get(0));
-
+        }
         if (lstuser.size() > 0) {
             if (lstuser.get(0).getTblUserRole().getRolePK().equals(new BigInteger("1"))) {
+                model.addAttribute("lstAdvertisement",advertisementService.fetchAllAdvertismentTopic());
+                model.addAttribute("lstPromotions",promotionCampaningService.viewpageofpromotionservice());
+                model.addAttribute("lstUsers",userService.fetchAllUser());
                 return "com.neha.adminIndex";
             } else {
                 return "com.neha.userIndex";

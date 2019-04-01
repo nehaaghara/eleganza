@@ -9,6 +9,7 @@ import com.neha.Repo.UserProfileRepository;
 import com.neha.Service.UserProfileService;
 import com.neha.model.TblUser;
 import java.math.BigInteger;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +35,11 @@ public class UserProfileServiceImpl implements UserProfileService{
         oldValue.setContect(tblUser.getContect());
         userProfileRepository.updateProfileInformation(oldValue);
         return "Profile Updated SuccessFully" ;
+    }
+
+    @Override
+    public List<TblUser> fetchAllUser() {
+        return userProfileRepository.fetchAllUser();
     }
 
     

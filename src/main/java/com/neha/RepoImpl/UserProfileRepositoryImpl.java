@@ -35,6 +35,11 @@ public class UserProfileRepositoryImpl implements UserProfileRepository{
         List<TblUser> lstUser= commonDao.findEntity(TblUser.class,"userid",OperationTypeEnum.EQ,userId);
         return lstUser.get(0);
     }
+
+    @Override
+    public List<TblUser> fetchAllUser() {
+        return commonDao.findEntity(TblUser.class,"tblUserRole.rolePK",OperationTypeEnum.EQ,new BigInteger("2"));
+    }
     
     
 }

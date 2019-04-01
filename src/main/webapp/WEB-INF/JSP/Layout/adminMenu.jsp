@@ -32,11 +32,17 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
             <li class="treeview">
-                <a href="${pageContext.servletContext.contextPath}/dashboard">
+                <a href="#">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
                 </a>
-
+                <ul class="treeview-menu">
+                    <li><a href="${pageContext.servletContext.contextPath}/dashboard"><i class="fa fa-circle-o"></i>view Dashboard</a></li>
+                </ul>
             </li>
+
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-laptop"></i> <span>Advertisement Topic</span>
@@ -50,18 +56,6 @@
                 </ul>
             </li>
 
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-laptop"></i> <span>User Interest</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="${pageContext.servletContext.contextPath}/adduserinterest"><i class="fa fa-circle-o"></i> Add </a></li>
-                    <li><a href="${pageContext.servletContext.contextPath}/viewuserinterest"><i class="fa fa-circle-o"></i> View </a></li>
-                </ul>
-            </li>
 
             <li class="treeview">
                 <a href="#">
@@ -72,9 +66,34 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="${pageContext.servletContext.contextPath}/profileInformation"><i class="fa fa-circle-o"></i> Change Your Information </a></li>
-                    <li><a href="${pageContext.servletContext.contextPath}/changePassword"><i class="fa fa-circle-o"></i>Change Password </a></li>
+                    <li><a href="${pageContext.servletContext.contextPath}/changePassword/${sessionScope.sessionuser.userid}"><i class="fa fa-circle-o"></i>Change Password </a></li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i> <span>Services</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="${pageContext.servletContext.contextPath}/addAdminService"><i class="fa fa-circle-o"></i> Add </a></li>
+                    <li><a href="${pageContext.servletContext.contextPath}/viewAdminService"><i class="fa fa-circle-o"></i>View</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i> <span>Packages</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="${pageContext.servletContext.contextPath}/addAdminPackage"><i class="fa fa-circle-o"></i> Add </a></li>
+                    <li><a href="${pageContext.servletContext.contextPath}/viewAdminPackage"><i class="fa fa-circle-o"></i>View</a></li>
+                </ul>
+            </li>
+
 
             <!--            <li class="treeview">
                             <a href="#">

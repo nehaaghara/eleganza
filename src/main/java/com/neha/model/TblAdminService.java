@@ -5,7 +5,6 @@
  */
 package com.neha.model;
 
-import java.io.Serializable;
 import java.math.BigInteger;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,37 +18,40 @@ import javax.persistence.Table;
  * @author ITMCS
  */
     @Entity
-    @Table(name = "tbl_advttopic")
-public class TblAdvertisementTopic implements Serializable {
+    @Table(name = "tbl_adminservice")
+public class TblAdminService {
 
     @Id
-    @Column(name = "topic_Id")
+    @Column(name = "Service_Id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    BigInteger topic_Id;
+    BigInteger service_Id;
 
-    @Column(name = "title")
-    String title;
+    @Column(name = "ServiceName")
+    String serviceName;
 
-    @Column(name = "description")
+    @Column(name = "Description")
     String description;
 
-    @Column(name = "flag")
+    @Column(name = "Charges")
+    String charges;
+
+    @Column(name = "Flag")
     int flag;
 
-    public BigInteger getTopic_Id() {
-        return topic_Id;
+    public BigInteger getService_Id() {
+        return service_Id;
     }
 
-    public void setTopic_Id(BigInteger topic_Id) {
-        this.topic_Id = topic_Id;
+    public void setService_Id(BigInteger service_Id) {
+        this.service_Id = service_Id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getServiceName() {
+        return serviceName;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
     }
 
     public String getDescription() {
@@ -60,6 +62,14 @@ public class TblAdvertisementTopic implements Serializable {
         this.description = description;
     }
 
+    public String getCharges() {
+        return charges;
+    }
+
+    public void setCharges(String charges) {
+        this.charges = charges;
+    }
+
     public int getFlag() {
         return flag;
     }
@@ -67,5 +77,6 @@ public class TblAdvertisementTopic implements Serializable {
     public void setFlag(int flag) {
         this.flag = flag;
     }
-
+    
+    
 }

@@ -14,6 +14,25 @@
         <put-attribute name="body" value="/WEB-INF/JSP/Admin/adminIndex.jsp"></put-attribute>
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
+    
+    <definition name="com.neha.userLayout" template="/WEB-INF/JSP/Layout/adminLayout.jsp">
+        <put-attribute name="adminHeader" value="/WEB-INF/JSP/Layout/adminHeader.jsp" />
+        <put-attribute name="adminMenu" value="/WEB-INF/JSP/User/userMenu.jsp" />
+        <put-attribute name="adminFooter" value="/WEB-INF/JSP/Layout/adminFooter.jsp" />
+    </definition>
+    <definition name="com.neha.userIndex" extends="com.neha.userLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/adminIndex.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <definition name="com.neha.promationcampainingtiles" extends="com.neha.userLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/User/PromationCampaining.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <definition name="com.neha.viewpromotioncampainingtiles" extends="com.neha.userLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/User/viewpromotioncampaining.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    
     <definition name="com.neha.addAdvertisementTopic" extends="com.neha.adminLayout">
         <put-attribute name="body" value="/WEB-INF/JSP/Admin/addAdvertisementTopic.jsp"></put-attribute>
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
@@ -36,6 +55,23 @@
     </definition>
     <definition name="com.neha.changePassword" extends="com.neha.adminLayout">
         <put-attribute name="body" value="/WEB-INF/JSP/Layout/changePassword.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    
+    <definition name="com.neha.addadminPackage" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/addadminPackage.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+        <definition name="com.neha.viewadminPackage" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/viewadminPackage.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <definition name="com.neha.addadminService" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/addadminService.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <definition name="com.neha.viewadminService" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/viewadminService.jsp"></put-attribute>
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
     <!--Admin Menu-->

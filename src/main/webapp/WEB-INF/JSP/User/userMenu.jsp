@@ -31,7 +31,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            
+
             <li class="treeview">
                 <a href="#">
                     <i class="fa fa-laptop"></i> <span>PROMATION CAMPAINING</span>
@@ -47,45 +47,19 @@
 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-laptop"></i>
-                    <span>Category</span>
+                    <i class="fa fa-laptop"></i> <span>User Interest</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="${pageContext.servletContext.contextPath}/addcategory"><i class="fa fa-circle-o"></i> Add Category</a></li>
-                    <li><a href="${pageContext.servletContext.contextPath}/viewcategory"><i class="fa fa-circle-o"></i> View Category</a></li>
-
+                    <li><a href="${pageContext.servletContext.contextPath}/adduserinterest"><i class="fa fa-circle-o"></i> Add </a></li>
+                    <li><a href="${pageContext.servletContext.contextPath}/viewuserinterest"><i class="fa fa-circle-o"></i> View </a></li>
                 </ul>
             </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-laptop"></i>
-                    <span>Brand</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="${pageContext.servletContext.contextPath}/addadminbrand"><i class="fa fa-circle-o"></i> Add Brand</a></li>
-                    <li><a href="${pageContext.servletContext.contextPath}/viewadminbrand"><i class="fa fa-circle-o"></i> View Brand</a></li>
 
-                </ul>
-            </li>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-laptop"></i>
-                    <span>Product</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href="${pageContext.servletContext.contextPath}/addproduct"><i class="fa fa-circle-o"></i> Add Product</a></li>
-                    <li><a href="${pageContext.servletContext.contextPath}/viewproduct"><i class="fa fa-circle-o"></i>View Product</a></li>
 
-                </ul>
+
         </ul>
     </section>
 </aside> 

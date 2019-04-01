@@ -36,7 +36,7 @@ public class UserProfileController {
     @RequestMapping(value = "/updateprofile/{userid}", method = RequestMethod.POST)
     public String UpdateProfileInformation(@PathVariable("userid") BigInteger userid, HttpServletRequest request, @ModelAttribute("tblUser") TblUser updateUser) {
        userProfileService.updateProfileInformation(updateUser, request);
-        return "redirect:/updateprofile/{userid}";
+        return "redirect:/dashboard";
     }
 
     @RequestMapping(value = "/changePassword/{userid}", method = RequestMethod.GET)

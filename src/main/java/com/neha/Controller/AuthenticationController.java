@@ -47,7 +47,7 @@ public class AuthenticationController {
             if (lstuser.get(0).getTblUserRole().getRolePK().equals(new BigInteger("1"))) {
                 return "com.neha.adminIndex";
             } else {
-                return "com.neha.usreIndex";
+                return "com.neha.userIndex";
             }
 
         } else {

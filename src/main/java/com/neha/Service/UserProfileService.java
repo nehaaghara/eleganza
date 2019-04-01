@@ -6,17 +6,16 @@
 package com.neha.Service;
 
 import com.neha.model.TblUser;
-import java.util.List;
+import java.math.BigInteger;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Service;
 
 /**
  *
- * @author ITMCS-PC
+ * @author ITMCS
  */
 @Service
-public interface AuthenticationService {
-    
-    public void registerservice( TblUser tblUser);
-     public List<TblUser> loginservice(TblUser tblUser);
-     public List<TblUser> fetchAllUser();
+public interface UserProfileService {
+    public String updateProfileInformation(TblUser tblUser,HttpServletRequest request);
+  
 }

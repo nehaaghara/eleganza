@@ -9,7 +9,7 @@
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>A</b>LT</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Gruh</b>Udhyog</span>
+      <span class="logo-lg"><b>Eleganza</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -221,7 +221,7 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="${pageContext.servletContext.contextPath}/webresource/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">${sessionScope.lstuser.get(0).first_name}</span>
+              <span class="hidden-xs">${sessionScope.sessionuser.first_name}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -229,7 +229,7 @@
                 <img src="${pageContext.servletContext.contextPath}/webresource/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  ${sessionScope.lstuser.get(0).first_name} - Web Developer
+                  ${sessionScope.sessionuser.first_name} - Web Developer
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -239,6 +239,11 @@
               <li class="user-footer">
                   <div class="text-center">
                   <a href="${pageContext.servletContext.contextPath}/logout" class="btn btn-default btn-flat">Sign out</a>
+                </div>
+              </li>
+               <li class="user-footer">
+                  <div class="text-center">
+                  <a href="${pageContext.servletContext.contextPath}/profileInformation" class="btn btn-default btn-flat">Profile</a>
                 </div>
               </li>
             </ul>

@@ -1,8 +1,8 @@
 
 <%-- 
-    Document   : ublOasisLogin
-    Created on : Nov 15, 2018, 2:06:31 PM
-    Author     : ITMCS
+Document : ublOasisLogin
+Created on : Nov 15, 2018, 2:06:31 PM
+Author : ITMCS
 --%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,9 +16,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>DIAN | UBL OASIS</title>
         <!-- Tell the browser to be responsive to screen width -->
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <meta content="width=device-width, initial-scale=1 , maximum-scale=1 , user-scalable=no" name="viewport">
         <!-- Bootstrap 3.3.6 -->
-        <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/webresource/admin/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
         <!-- Ionicons -->
@@ -27,7 +27,7 @@
         <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/webresource/admin/dist/css/AdminLTE.min.css">
         <!-- iCheck -->
         <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/webresource/admin/plugins/iCheck/square/blue.css">
-        <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/webresource/admin/pageCss/CommonCss.css">
+        <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/webresource/css/custom.css">
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -38,12 +38,14 @@
     <body class="hold-transition login-page">
         <div class="login-box">
             <div class="login-logo">
-                <b>Recommendation</b>
+                <b style="color:black">ELEGANZA</b>
             </div>
             <!-- /.login-logo -->
             <div class="login-box-body">
 
-                <form action="${pageContext.servletContext.contextPath}/loginpage" method="post" onsubmit="return submitLogin();">
+
+
+                <form action="${pageContext.servletContext.contextPath}/loginpage" method="get">
                     <div class="form-group has-feedback">
                         <input type="email" class="form-control" id="emailAddress" title="emailAddress" placeholder="Enter Mail Id" name="emailAddress">
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
@@ -54,16 +56,19 @@
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                         <span for="password" class="help-block"><form:errors path="password"/></span>
                     </div>
+                    <center> <div class="row">
+                            <div class="col-xs-4">
+                                <button style="text-align: center; margin-left:84px" type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                            </div> 
+                        </div></center>
                     <div class="row">
-                        <div class="col-xs-8">  
-                            <a href="${pageContext.servletContext.contextPath}/registrationindex" class="text-center">Register_new_memberShip</a>
+                        <div class="col-xs-8"> 
+                            <a style=" margin-left:51px" href="${pageContext.servletContext.contextPath}/registrationindex" class="text-center">Register_new_memberShip</a>
                         </div>
-                        <!-- /.col -->
-                        <!-- /.col -->
-                        <div class="col-xs-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-                        </div>
-                    </div>
+                    </div> 
+                    <!-- /.col -->
+                    <!-- /.col -->
+
                 </form>
 
 
@@ -74,24 +79,23 @@
         <!-- /.login-box -->
 
         <!-- jQuery 2.2.3 -->
-        <script src="${pageContext.servletContext.contextPath}/webresource/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="${pageContext.servletContext.contextPath}/webresource/js/jquery-1.12.3.min.js"></script>
         <!-- Bootstrap 3.3.6 -->
         <script src="${pageContext.servletContext.contextPath}/webresource/admin/bootstrap/js/bootstrap.min.js"></script>
         <!-- iCheck -->
         <script src="${pageContext.servletContext.contextPath}/webresource/admin/plugins/iCheck/icheck.min.js"></script>
-        <script src="${pageContext.servletContext.contextPath}/webresource/admin/pageJS/commonJs.js"></script>
-        <script src="${pageContext.servletContext.contextPath}/webresource/admin/pageJS/userLogin.js"></script>
+        <script src="${pageContext.servletContext.contextPath}/webresource/js/jquery.magnific-popup.js"></script>
+        <script src="${pageContext.servletContext.contextPath}/webresource/js/jquery-ui.min.js"></script>
         <script>
-                    $(function () {
-                        $('input').iCheck({
-                            checkboxClass: 'icheckbox_square-blue',
-                            radioClass: 'iradio_square-blue',
-                            increaseArea: '20%' // optional
-                        });
-                    });
+            $(function () {
+                $('input').iCheck({
+                    checkboxClass: 'icheckbox_square-blue',
+                    radioClass: 'iradio_square-blue',
+                    increaseArea: '20%' // optional
+                });
+            });
         </script>
 
 
     </body>
 </html>
-

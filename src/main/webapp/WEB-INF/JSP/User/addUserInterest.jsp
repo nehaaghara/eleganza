@@ -35,8 +35,8 @@
                         <form:hidden path="interestId" name="interestId" />
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="userId">Enter Your User Name</label>
-                                <form:input path="userId.userid" name="title" class="form-control" id="userId" title="userId"  placeholder="Enter Advertisement Topic" autofocus="on"/>
+                                <label for="userId">Enter Your User Name</label><br>
+                                  <form:label path="userId.userid" name="title" class="form-control">${sessionScope.sessionuser.first_name}</form:label>
                             </div>
                         </div>
                         <div class="box-body">
@@ -45,7 +45,12 @@
                                 <form:select path="topic_Id.topic_Id" title="topic_Id" name="topic_Id.topic_Id" id="topic_Id" class="form-control select2" style="width: 100%;">
                                     <option value="-1" disabled="true" selected="true">Please Select</option>
                                     <c:forEach items='${lstAdvertisementTopics}' var='entry'>
-                                        <option value="${entry.topic_Id}">${entry.title}</option> 
+                                        <c:if test="${entry.topic_Id eq tblUserInterest.topic_Id.topic_Id}">
+                                            <option value="${entry.topic_Id}" selected="true">${entry.title}</option> 
+                                        </c:if>
+                                        <c:if test="${entry.topic_Id ne tblUserInterest.topic_Id.topic_Id}">
+                                            <option value="${entry.topic_Id}">${entry.title}</option> 
+                                        </c:if>
                                     </c:forEach>  
                                 </form:select>
                             </div>

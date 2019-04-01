@@ -22,12 +22,20 @@
         <put-attribute name="body" value="/WEB-INF/JSP/Admin/viewAdvertisementTopic.jsp"></put-attribute>
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
-     <definition name="com.neha.addUserInterest" extends="com.neha.adminLayout">
+    <definition name="com.neha.addUserInterest" extends="com.neha.adminLayout">
         <put-attribute name="body" value="/WEB-INF/JSP/User/addUserInterest.jsp"></put-attribute>
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
     <definition name="com.neha.viewUserInterest" extends="com.neha.adminLayout">
         <put-attribute name="body" value="/WEB-INF/JSP/User/viewUserInterest.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <definition name="com.neha.userProfile" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Layout/userProfile.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <definition name="com.neha.changePassword" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Layout/changePassword.jsp"></put-attribute>
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
     <!--Admin Menu-->

@@ -6,6 +6,8 @@
 package com.neha.Repo;
 
 import com.neha.model.TblUser;
+import java.math.BigInteger;
+import java.util.List;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,7 +16,11 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public interface AuthenticationRepo {
-    
+
     public void registerrepo(TblUser tblUser);
+
+    public List<TblUser> loginrepo(TblUser tblUser);
     
+    public List<TblUser> fetchAllUser();
+
 }

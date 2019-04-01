@@ -26,7 +26,7 @@ public class UserInterestServiceImpl implements UserInterestService {
     @Override
     public String saveUserInterestTopic(TblUserInterest tblUserInterest) {
         tblUserInterest.setTopic_Id(tblUserInterest.getTopic_Id());
-        tblUserInterest.setUserId(tblUserInterest.getUserId());
+     //   tblUserInterest.setUserId(tblUserInterest.getUserId());
         userInterestRepository.saveUserInterestTopic(tblUserInterest);
         return "Saved Successfully";
     }

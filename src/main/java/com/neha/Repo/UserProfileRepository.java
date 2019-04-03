@@ -8,6 +8,7 @@ package com.neha.Repo;
 import com.neha.model.TblUser;
 import java.math.BigInteger;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -19,4 +20,6 @@ public interface UserProfileRepository {
     public void updateProfileInformation(TblUser tblUser);
     public TblUser fetchById(BigInteger userId);
     public List<TblUser> fetchAllUser();
+    public TblUser fetchpasswordById(BigInteger userId,HttpServletRequest request);
+    public void updatePasswordById(TblUser tblUser);
 }

@@ -19,4 +19,5 @@ import org.springframework.stereotype.Service;
 public interface UserProfileService {
     public String updateProfileInformation(TblUser tblUser,HttpServletRequest request);
    public List<TblUser> fetchAllUser();
+   public String updatePasswordById(TblUser tblUser,HttpServletRequest request);
 }

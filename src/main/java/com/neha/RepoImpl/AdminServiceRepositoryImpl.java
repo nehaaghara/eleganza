@@ -7,7 +7,9 @@ package com.neha.RepoImpl;
 
 import com.neha.Repo.AdminServiceRepository;
 import com.neha.dal.CommonDao;
+import com.neha.dal.OperationTypeEnum;
 import com.neha.model.TblAdminService;
+import java.math.BigInteger;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,14 +25,30 @@ public class AdminServiceRepositoryImpl implements AdminServiceRepository{
     CommonDao commonDao;
     
     @Override
-    public TblAdminService saveAdvertismentTopic(TblAdminService tblAdminService) {
+    public TblAdminService saveAdminService(TblAdminService tblAdminService) {
         commonDao.save(tblAdminService);
         return tblAdminService;
     }
 
     @Override
-    public List<TblAdminService> fetchAllAdvertismentTopic() {
+    public List<TblAdminService> fetchAllAdminService() {
         return commonDao.findEntity(TblAdminService.class);
+    }
+
+    @Override
+    public TblAdminService fetchServiceById(BigInteger servicePk) {
+        List<TblAdminService> lsAdminServices = commonDao.findEntity(TblAdminService.class,"service_Id",OperationTypeEnum.EQ,servicePk);
+        return lsAdminServices.get(0);
+        }
+
+    @Override
+    public void deleteServiceById(TblAdminService tblAdminService) {
+        commonDao.delete(tblAdminService);
+    }
+
+    @Override
+    public void updateServiceById(TblAdminService tblAdminService) {
+        commonDao.saveOrUpdate(tblAdminService);
     }
     
 }

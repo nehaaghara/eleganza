@@ -23,52 +23,52 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "tbl_user")
 public class TblUser {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userid", nullable = false)
     BigInteger userid;
-    
+
     @Column(name = "first_name")
     String first_name;
-    
+
     @Column(name = "last_name")
     String last_name;
-    
+
     @Column(name = "email_address")
     String email_address;
-    
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "roleFk")
     TblUserRole tblUserRole;
-    
+
     @Column(name = "gender")
     String gender;
-    
+
     @Column(name = "address")
     String address;
-    
+
     @Column(name = "state")
     String state;
-      
+
     @Column(name = "pincode")
     int pincode;
-    
+
     @Column(name = "city")
     String city;
-    
+
     @Column(name = "contect")
     int contect;
-    
+
     @Column(name = "userName")
     String username;
-    
+
     @Column(name = "password")
     String password;
-     
+
     @Column(name = "conformpassword")
     String conformpassword;
-      
+
     @Column(name = "flag")
     boolean flag;
 
@@ -191,7 +191,5 @@ public class TblUser {
     public void setFlag(boolean flag) {
         this.flag = flag;
     }
-    
-    
-    
+
 }

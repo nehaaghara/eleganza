@@ -15,6 +15,74 @@
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
     
+    <!--Promation tiles-->
+    <definition name="com.neha.promationcampainingtiles" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/User/PromationCampaining.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <definition name="com.neha.viewpromotioncampainingtiles" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/User/viewpromotioncampaining.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <!--Promation tiles-->
+      
+    <!--Advertise Topic tiles-->
+    <definition name="com.neha.addAdvertisementTopic" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/addAdvertisementTopic.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <definition name="com.neha.viewAdvertisementTopic" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/viewAdvertisementTopic.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <!--Advertise Topic tiles-->
+    
+    <!--Admin profile tiles-->
+    <definition name="com.neha.userProfile" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Layout/userProfile.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <!--Admin profile tiles-->
+    
+    <!--Admin change password tiles-->
+    <definition name="com.neha.changePassword" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Layout/changePassword.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <!--Admin change password tiles-->
+    
+    <!--Admin Package tiles--> 
+    <definition name="com.neha.addadminPackage" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/addadminPackage.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <definition name="com.neha.viewadminPackage" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/viewadminPackage.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <!--Admin Package tiles--> 
+    
+    <!--Admin Service tiles--> 
+    <definition name="com.neha.addadminService" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/addadminService.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <definition name="com.neha.viewadminService" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/viewadminService.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <!--Admin Service tiles--> 
+    
+    <!--view User Interest tiles--> 
+    <definition name="com.neha.viewAllUserInterest" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/User/viewUserInterest.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <!--view User Interest tiles--> 
+    
+    <!--Admin Menu-->
+      
+    <!--User Menu-->
     <definition name="com.neha.userLayout" template="/WEB-INF/JSP/Layout/adminLayout.jsp">
         <put-attribute name="adminHeader" value="/WEB-INF/JSP/Layout/adminHeader.jsp" />
         <put-attribute name="adminMenu" value="/WEB-INF/JSP/User/userMenu.jsp" />
@@ -24,56 +92,40 @@
         <put-attribute name="body" value="/WEB-INF/JSP/Admin/adminIndex.jsp"></put-attribute>
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
-    <definition name="com.neha.promationcampainingtiles" extends="com.neha.userLayout">
-        <put-attribute name="body" value="/WEB-INF/JSP/User/PromationCampaining.jsp"></put-attribute>
-        <put-attribute name="title" value="gruhudhyog"></put-attribute>
-    </definition>
+    
+    <!--view Promation tiles for User-->
     <definition name="com.neha.viewpromotioncampainingtiles" extends="com.neha.userLayout">
         <put-attribute name="body" value="/WEB-INF/JSP/User/viewpromotioncampaining.jsp"></put-attribute>
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
-    
-    <definition name="com.neha.addAdvertisementTopic" extends="com.neha.adminLayout">
-        <put-attribute name="body" value="/WEB-INF/JSP/Admin/addAdvertisementTopic.jsp"></put-attribute>
-        <put-attribute name="title" value="gruhudhyog"></put-attribute>
-    </definition>
-    <definition name="com.neha.viewAdvertisementTopic" extends="com.neha.adminLayout">
-        <put-attribute name="body" value="/WEB-INF/JSP/Admin/viewAdvertisementTopic.jsp"></put-attribute>
-        <put-attribute name="title" value="gruhudhyog"></put-attribute>
-    </definition>
-    <definition name="com.neha.addUserInterest" extends="com.neha.adminLayout">
+    <!--view Promation tiles for User-->
+     
+    <!--User Interest tiles-->
+    <definition name="com.neha.addUserInterest" extends="com.neha.userLayout">
         <put-attribute name="body" value="/WEB-INF/JSP/User/addUserInterest.jsp"></put-attribute>
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
-    <definition name="com.neha.viewUserInterest" extends="com.neha.adminLayout">
+    <definition name="com.neha.viewUserInterest" extends="com.neha.userLayout">
         <put-attribute name="body" value="/WEB-INF/JSP/User/viewUserInterest.jsp"></put-attribute>
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
-    <definition name="com.neha.userProfile" extends="com.neha.adminLayout">
+    <!--User Interest tiles-->
+    
+    <!--User Profile tiles-->
+    <definition name="com.neha.userProfile" extends="com.neha.userLayout">
         <put-attribute name="body" value="/WEB-INF/JSP/Layout/userProfile.jsp"></put-attribute>
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
-    <definition name="com.neha.changePassword" extends="com.neha.adminLayout">
+    <!--User Profile tiles-->
+       
+    <!--User change passwrod tiles-->
+    <definition name="com.neha.changePassword" extends="com.neha.userLayout">
         <put-attribute name="body" value="/WEB-INF/JSP/Layout/changePassword.jsp"></put-attribute>
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
-    
-    <definition name="com.neha.addadminPackage" extends="com.neha.adminLayout">
-        <put-attribute name="body" value="/WEB-INF/JSP/Admin/addadminPackage.jsp"></put-attribute>
-        <put-attribute name="title" value="gruhudhyog"></put-attribute>
-    </definition>
-        <definition name="com.neha.viewadminPackage" extends="com.neha.adminLayout">
-        <put-attribute name="body" value="/WEB-INF/JSP/Admin/viewadminPackage.jsp"></put-attribute>
-        <put-attribute name="title" value="gruhudhyog"></put-attribute>
-    </definition>
-    <definition name="com.neha.addadminService" extends="com.neha.adminLayout">
-        <put-attribute name="body" value="/WEB-INF/JSP/Admin/addadminService.jsp"></put-attribute>
-        <put-attribute name="title" value="gruhudhyog"></put-attribute>
-    </definition>
-    <definition name="com.neha.viewadminService" extends="com.neha.adminLayout">
-        <put-attribute name="body" value="/WEB-INF/JSP/Admin/viewadminService.jsp"></put-attribute>
-        <put-attribute name="title" value="gruhudhyog"></put-attribute>
-    </definition>
-    <!--Admin Menu-->
+    <!--User change passwrod tiles-->
+     
+    <!--User Menu-->
+      
 </tiles-definitions>
 

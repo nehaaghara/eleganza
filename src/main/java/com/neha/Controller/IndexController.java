@@ -5,9 +5,11 @@
  */
 package com.neha.Controller;
 
+import java.math.BigInteger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -26,6 +28,11 @@ public class IndexController {
     @RequestMapping(value = "/dashboard")
     public String dashboard() {
         return "com.neha.adminIndex";
+    }
+
+    @RequestMapping(value = "/userdashboard")
+    public String userdashboard() {
+        return "com.neha.userIndex";
     }
 
     @RequestMapping(value = "/registrationindex")

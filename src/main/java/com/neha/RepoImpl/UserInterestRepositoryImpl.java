@@ -51,5 +51,10 @@ public class UserInterestRepositoryImpl implements UserInterestRepository{
     public void updateUserInterestTopicById(TblUserInterest tblUserInterest) {
         commonDao.update(tblUserInterest);
     }
+
+    @Override
+    public List<TblUserInterest> fetchAllUserInterestTopicById(BigInteger userId) {
+        return commonDao.findEntity(TblUserInterest.class,"userId.userid",OperationTypeEnum.EQ,userId);
+    }
     
 }

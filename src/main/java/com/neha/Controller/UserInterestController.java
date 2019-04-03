@@ -48,19 +48,31 @@ public class UserInterestController {
     }
 
     @RequestMapping(value = "/viewuserinterest", method = RequestMethod.GET)
-    public String viewUserInterest(Model model) {
-        List<TblUserInterest> lstUserInterests = userInterestService.fetchAllUserInterestTopic();
-        model.addAttribute("lstUserInterest", lstUserInterests);
-        return "com.neha.viewUserInterest";
+    public String viewUserInterest(Model model, HttpServletRequest request) {
+        TblUser lstuser = (TblUser) request.getSession(false).getAttribute("sessionuser");
+        String role = lstuser.getTblUserRole().getRoleName();
+        List<TblUserInterest> lstUserInterests = null;
+        if (role.equalsIgnoreCase("admin")) {
+            System.out.println("in if");
+            lstUserInterests = userInterestService.fetchAllUserInterestTopic();
+          
+            model.addAttribute("lstUserInterest", lstUserInterests);
+            return "com.neha.viewAllUserInterest";
+        } else {
+            System.out.println("in else::"+lstuser.getUserid());
+            lstUserInterests = userInterestService.fetchUserInterestById(lstuser.getUserid());
+            model.addAttribute("lstUserInterest", lstUserInterests);
+            return "com.neha.viewUserInterest";
+        }
+
     }
 
     @RequestMapping(value = "/saveuserinterest", method = RequestMethod.POST)
     public String saveUserInterest(@ModelAttribute("tblUserInterest") TblUserInterest addUserInterest, HttpServletRequest request, RedirectAttributes redirectAttributes) {
         String response = null;
 
-       TblUser tblUser = new TblUser();
+        TblUser tblUser = new TblUser();
         TblUser lstuser = (TblUser) request.getSession(false).getAttribute("sessionuser");
-        System.out.println("lstuser::"+request.getSession(false).getAttribute("sessionuser"));
         tblUser.setUserid(lstuser.getUserid());
         addUserInterest.setUserId(tblUser);
         if (addUserInterest.getInterestId() == null) {
@@ -75,7 +87,7 @@ public class UserInterestController {
         } else if (request.getParameter("saveAndNew") != null) {
             return "redirect:/adduserinterest";
         }
-        return "com.neha.viewUserInterest";
+        return "redirect:/viewuserinterest";
     }
 
     @RequestMapping(value = "/edituserinterest/{interestId}", method = RequestMethod.GET)

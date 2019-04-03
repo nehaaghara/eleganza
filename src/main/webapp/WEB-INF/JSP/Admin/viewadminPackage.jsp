@@ -17,7 +17,7 @@
             <small>view</small>
         </h1>
         <br>
-        <input type="button" class="btn btn-primary" name="addAdvertisement" value="Add Advertisement" onclick="window.location.href = '${pageContext.servletContext.contextPath}/addAdminPackage'">
+        <input type="button" class="btn btn-primary" name="addAdminPackage" value="Add Admin Package" onclick="window.location.href = '${pageContext.servletContext.contextPath}/addAdminPackage'">
     </section>
     <section class="content">
         <div class="row">
@@ -56,21 +56,21 @@
                                     <th>Expiry Date</th>
                                     <th>Description</th>
                                     <th>Charges</th>
-                                    <!--                                    <th>Edit</th>
-                                                                        <th>Delete</th>-->
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <c:set var="count" value="1"/>
-                                <c:forEach items="${lstAdvertisementTopic}" var="entry">
+                                <c:forEach items="${lstPackages}" var="entry">
                                     <tr>
                                         <td>${count}</td>
                                         <td>${entry.creationDate}</td>
                                         <td>${entry.expiryDate}</td>
                                         <td>${entry.description}</td>
                                          <td>${entry.cost}</td>
-<!--                                        <td><a href="${pageContext.servletContext.contextPath}/editAdvertisement/${entry.service_Id}" style="font-size: 22px;"><i class="fa fa-edit"></i></a></td>
-                                       <td><a href="${pageContext.servletContext.contextPath}/deleteAdvertisement/${entry.service_Id}" style="font-size: 22px;"><i class="fa fa-trash"></i></a></td>-->
+                                        <td><a href="${pageContext.servletContext.contextPath}/editAdminPackage/${entry.package_Id}" style="font-size: 22px;"><i class="fa fa-edit"></i></a></td>
+                                       <td><a href="${pageContext.servletContext.contextPath}/deleteAdminPackage/${entry.package_Id}" style="font-size: 22px;"><i class="fa fa-trash"></i></a></td>
 
                                     </tr>
                                     <c:set var="count" value="${count+1}"/>

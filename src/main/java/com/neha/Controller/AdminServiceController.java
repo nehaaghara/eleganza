@@ -8,12 +8,14 @@ package com.neha.Controller;
 import com.neha.Service.AdminServiceService;
 import com.neha.model.TblAdminService;
 import com.neha.model.TblAdvertisementTopic;
+import java.math.BigInteger;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -27,7 +29,7 @@ public class AdminServiceController {
 
     @Autowired
     AdminServiceService adminServiceService;
-    
+
     @RequestMapping(value = "/addAdminService", method = RequestMethod.GET)
     public String addAdminService(Model model) {
         model.addAttribute("tblAdminService", new TblAdminService());
@@ -36,8 +38,8 @@ public class AdminServiceController {
 
     @RequestMapping(value = "/viewAdminService", method = RequestMethod.GET)
     public String viewAdminService(Model model) {
-      List<TblAdminService> lstAdvertisement = adminServiceService.fetchAllAdvertismentTopic();
-     model.addAttribute("lstAdvertisementTopic", lstAdvertisement);
+        List<TblAdminService> lstAdvertisement = adminServiceService.fetchAllAdminService();
+        model.addAttribute("lstAdvertisementTopic", lstAdvertisement);
         return "com.neha.viewadminService";
     }
 
@@ -46,10 +48,10 @@ public class AdminServiceController {
         String response = null;
 
         if (addAdvertisementTopic.getService_Id() == null) {
-            response = adminServiceService.saveAdvertismentTopic(addAdvertisementTopic);
+            response = adminServiceService.saveAdminService(addAdvertisementTopic);
             redirectAttributes.addFlashAttribute("SuccessMessage", response);
         } else {
-      //      advertisementService.updateAdvertismentTopicById(addAdvertisementTopic);
+            adminServiceService.updateAdminServiceById(addAdvertisementTopic);
             redirectAttributes.addFlashAttribute("UpdateMessage", response);
         }
         if (request.getParameter("save") != null) {
@@ -58,6 +60,22 @@ public class AdminServiceController {
             return "redirect:/addAdminService";
         }
         return "com.neha.viewAdminService";
+    }
+
+    @RequestMapping(value = "/editAdminService/{serviceId}", method = RequestMethod.GET)
+    public String editAdminService(Model model, @PathVariable("serviceId") BigInteger serviceId) {
+        Object response = adminServiceService.fetchAdminServiceById(serviceId);
+        model.addAttribute("tblAdminService", response);
+        List<TblAdminService> lsTblAdminServices = adminServiceService.fetchAllAdminService();
+        model.addAttribute("lsTblAdminServices", lsTblAdminServices);
+
+        return "com.neha.addadminService";
+    }
+
+        @RequestMapping(value = "/deleteAdminService/{serviceId}", method = RequestMethod.GET)
+    public String deleteAdminService(@PathVariable("serviceId") BigInteger serviceId, HttpServletRequest request) {
+        adminServiceService.deleteAdminServiceById(serviceId);
+        return "redirect:/viewAdminService";
     }
 
 }

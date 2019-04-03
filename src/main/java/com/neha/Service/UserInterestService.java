@@ -18,6 +18,8 @@ public interface UserInterestService {
     public String saveUserInterestTopic(TblUserInterest tblUserInterest);
 
     public List<TblUserInterest> fetchAllUserInterestTopic();
+    
+    public List<TblUserInterest> fetchUserInterestById(BigInteger userId);
 
     public TblUserInterest fetchUserInterestTopicById(BigInteger interestId);
 

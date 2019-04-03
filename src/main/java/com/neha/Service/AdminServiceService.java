@@ -7,6 +7,7 @@ package com.neha.Service;
 
 import com.neha.model.TblAdminService;
 import com.neha.model.TblAdvertisementTopic;
+import java.math.BigInteger;
 import java.util.List;
 import org.springframework.stereotype.Service;
 
@@ -17,8 +18,14 @@ import org.springframework.stereotype.Service;
 @Service
 public interface AdminServiceService {
 
-    public String saveAdvertismentTopic(TblAdminService tblAdminService);
+    public String saveAdminService(TblAdminService tblAdminService);
 
-    public List<TblAdminService> fetchAllAdvertismentTopic();
+    public List<TblAdminService> fetchAllAdminService();
+    
+    public TblAdminService fetchAdminServiceById(BigInteger servicePk);
+    
+    public String deleteAdminServiceById(BigInteger servicePk);
+    
+    public String updateAdminServiceById(TblAdminService tblAdminService);
 
 }

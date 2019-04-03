@@ -46,6 +46,7 @@ public class AuthenticationController {
 
     @RequestMapping(value = "/loginpage", method = RequestMethod.GET)
     public String login(HttpServletRequest req,Model model) {
+        System.out.println("in login");
         TblUser tblUser = new TblUser();
         String email = req.getParameter("emailAddress");
         String password = req.getParameter("password");
@@ -67,7 +68,7 @@ public class AuthenticationController {
             }
 
         } else {
-            return "Login/registration";
+            return "Login/userLogin";
         }
     }
 

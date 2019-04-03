@@ -19,6 +19,8 @@ public interface UserInterestRepository {
     public TblUserInterest saveUserInterestTopic(TblUserInterest tblUserInterest);
 
     public List<TblUserInterest> fetchAllUserInterestTopic();
+    
+    public List<TblUserInterest> fetchAllUserInterestTopicById(BigInteger userId);
 
     public TblUserInterest fetchUserInterestTopicById(BigInteger interestId);
 

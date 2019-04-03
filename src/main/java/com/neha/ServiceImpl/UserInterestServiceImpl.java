@@ -55,4 +55,9 @@ public class UserInterestServiceImpl implements UserInterestService {
         return "Update Successfully";
     }
 
+    @Override
+    public List<TblUserInterest> fetchUserInterestById(BigInteger userId) {
+        return userInterestRepository.fetchAllUserInterestTopicById(userId);
+    }
+
 }

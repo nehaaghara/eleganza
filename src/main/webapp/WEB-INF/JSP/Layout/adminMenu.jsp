@@ -56,6 +56,18 @@
                 </ul>
             </li>
 
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i> <span>PROMATION CAMPAINING</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="${pageContext.servletContext.contextPath}/PromationCampainingpage"><i class="fa fa-circle-o"></i> Add Promation Campaining </a></li>
+                    <li><a href="${pageContext.servletContext.contextPath}/viewpromotionpage"><i class="fa fa-circle-o"></i> View Promation Campaining</a></li>
+                </ul>
+            </li>
 
             <li class="treeview">
                 <a href="#">
@@ -66,7 +78,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="${pageContext.servletContext.contextPath}/profileInformation"><i class="fa fa-circle-o"></i> Change Your Information </a></li>
-                    <li><a href="${pageContext.servletContext.contextPath}/changePassword/${sessionScope.sessionuser.userid}"><i class="fa fa-circle-o"></i>Change Password </a></li>
+                    <li><a href="${pageContext.servletContext.contextPath}/changePassword"><i class="fa fa-circle-o"></i>Change Password </a></li>
                 </ul>
             </li>
             <li class="treeview">
@@ -91,6 +103,18 @@
                 <ul class="treeview-menu">
                     <li><a href="${pageContext.servletContext.contextPath}/addAdminPackage"><i class="fa fa-circle-o"></i> Add </a></li>
                     <li><a href="${pageContext.servletContext.contextPath}/viewAdminPackage"><i class="fa fa-circle-o"></i>View</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i> <span>User Interest</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="${pageContext.servletContext.contextPath}/viewuserinterest"><i class="fa fa-circle-o"></i> View </a></li>
                 </ul>
             </li>
 

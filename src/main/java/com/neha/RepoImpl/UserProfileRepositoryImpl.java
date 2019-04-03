@@ -12,6 +12,7 @@ import com.neha.model.TblUser;
 import java.math.BigInteger;
 import static java.util.Collections.list;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -20,26 +21,39 @@ import org.springframework.stereotype.Repository;
  * @author ITMCS
  */
 @Repository
-public class UserProfileRepositoryImpl implements UserProfileRepository{
+public class UserProfileRepositoryImpl implements UserProfileRepository {
 
     @Autowired
     CommonDao commonDao;
-    
+
     @Override
     public void updateProfileInformation(TblUser tblUser) {
         commonDao.update(tblUser);
-        }
+    }
 
     @Override
     public TblUser fetchById(BigInteger userId) {
-        List<TblUser> lstUser= commonDao.findEntity(TblUser.class,"userid",OperationTypeEnum.EQ,userId);
+        List<TblUser> lstUser = commonDao.findEntity(TblUser.class, "userid", OperationTypeEnum.EQ, userId);
         return lstUser.get(0);
     }
 
     @Override
     public List<TblUser> fetchAllUser() {
-        return commonDao.findEntity(TblUser.class,"tblUserRole.rolePK",OperationTypeEnum.EQ,new BigInteger("2"));
+        return commonDao.findEntity(TblUser.class, "tblUserRole.rolePK", OperationTypeEnum.EQ, new BigInteger("2"));
     }
-    
-    
+
+    @Override
+    public void updatePasswordById(TblUser tblUser) {
+        commonDao.update(tblUser);
+    }
+
+    @Override
+    public TblUser fetchpasswordById(BigInteger userId,HttpServletRequest request) {
+        List<TblUser> lstUser = commonDao.findEntity(TblUser.class,"userid",OperationTypeEnum.EQ,userId,"password",OperationTypeEnum.EQ,request.getParameter("oldpassword"));
+        if(!lstUser.isEmpty()){
+        return lstUser.get(0);
+        }
+        return null;
+    }
+
 }

@@ -13,11 +13,11 @@
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            Advertisement
+            Admin Service
             <small>view</small>
         </h1>
         <br>
-        <input type="button" class="btn btn-primary" name="addAdvertisement" value="Add Advertisement" onclick="window.location.href = '${pageContext.servletContext.contextPath}/addAdvertisement'">
+        <input type="button" class="btn btn-primary" name="addAdminService" value="Add Admin Service" onclick="window.location.href = '${pageContext.servletContext.contextPath}/addAdminService'">
     </section>
     <section class="content">
         <div class="row">
@@ -55,8 +55,8 @@
                                     <th>Service Name</th>
                                     <th>Description</th>
                                     <th>Charges</th>
-<!--                                    <th>Edit</th>
-                                    <th>Delete</th>-->
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -67,8 +67,8 @@
                                         <td>${entry.serviceName}</td>
                                         <td>${entry.description}</td>
                                          <td>${entry.charges}</td>
-<!--                                        <td><a href="${pageContext.servletContext.contextPath}/editAdvertisement/${entry.service_Id}" style="font-size: 22px;"><i class="fa fa-edit"></i></a></td>
-                                        <td><a href="${pageContext.servletContext.contextPath}/deleteAdvertisement/${entry.service_Id}" style="font-size: 22px;"><i class="fa fa-trash"></i></a></td>-->
+                                        <td><a href="${pageContext.servletContext.contextPath}/editAdminService/${entry.service_Id}" style="font-size: 22px;"><i class="fa fa-edit"></i></a></td>
+                                        <td><a href="${pageContext.servletContext.contextPath}/deleteAdminService/${entry.service_Id}" style="font-size: 22px;"><i class="fa fa-trash"></i></a></td>
 
                                     </tr>
                                     <c:set var="count" value="${count+1}"/>

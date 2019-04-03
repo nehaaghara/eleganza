@@ -70,7 +70,7 @@
                         <!-- /.box-body -->
                         <div class="box-footer">
                             <input type="submit" name="save" value="Save & Exit" class="btn btn-primary"/>
-                            <input type="button" name="action" value="Cancel" class="btn btn-primary" onclick="window.location.href = '${pageContext.servletContext.contextPath}/viewAdvertisement'"/>
+                            <input type="button" name="action" value="Cancel" class="btn btn-primary" onclick="window.location.href = '${pageContext.servletContext.contextPath}/profileInformation'"/>
                         </div>
                     </form:form>
                 </div>
@@ -80,5 +80,5 @@
 </div>
 <!-- /.content-wrapper -->
 
-<script src="${pageContext.servletContext.contextPath}/webresource/js/profileJs.js"></script>
-<script src="${pageContext.servletContext.contextPath}/webresource/js/commonJs.js"></script>
+<script src="${pageContext.servletContext.contextPath}/webresource/js/userJs/profileJs.js"></script>
+<script src="${pageContext.servletContext.contextPath}/webresource/js/userJs/commonJs.js"></script>

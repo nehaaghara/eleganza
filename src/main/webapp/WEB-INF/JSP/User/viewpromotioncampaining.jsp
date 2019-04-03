@@ -30,7 +30,6 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Promotion Id</th>
                                     <th>Title</th>
                                     <th>Description</th>
                                     <th>Promotion Date</th>
@@ -44,7 +43,6 @@
                                 <c:forEach items="${lstpromotion}" var="promotion">
                                     <tr>
                                         <td>${count}</td>
-                                        <td>${promotion.promotionid}</td>
                                         <td>${promotion.title}</td>
                                         <td>${promotion.description}</td>
                                         <td>${promotion.promotionDate}</td>

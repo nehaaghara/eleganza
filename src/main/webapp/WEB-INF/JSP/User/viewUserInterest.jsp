@@ -17,7 +17,7 @@
             <small>view</small>
         </h1>
         <br>
-        <input type="button" class="btn btn-primary" name="addAdvertisement" value="Add Advertisement" onclick="window.location.href = '${pageContext.servletContext.contextPath}/addAdvertisement'">
+        <input type="button" class="btn btn-primary" name="addUserInterest" value="Add User Interest" onclick="window.location.href = '${pageContext.servletContext.contextPath}/adduserinterest'">
     </section>
     <section class="content">
         <div class="row">
@@ -52,7 +52,9 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
+                                    <th>Name of User</th>
                                     <th>User Interest</th>
+                                    <th>Description</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -62,8 +64,10 @@
                                 <c:forEach items="${lstUserInterest}" var="entry">
                                     <tr>
                                         <td>${count}</td>
+                                        <td>${entry.userId.first_name}</td>
                                         <td>${entry.topic_Id.title}</td>
-                                         <td><a href="${pageContext.servletContext.contextPath}/edituserinterest/${entry.interestId}" style="font-size: 22px;"><i class="fa fa-edit"></i></a></td>
+                                        <td>${entry.topic_Id.description}</td>
+                                        <td><a href="${pageContext.servletContext.contextPath}/edituserinterest/${entry.interestId}" style="font-size: 22px;"><i class="fa fa-edit"></i></a></td>
                                         <td><a href="${pageContext.servletContext.contextPath}/deleteuserinterest/${entry.interestId}" style="font-size: 22px;"><i class="fa fa-trash"></i></a></td>
 
                                     </tr>

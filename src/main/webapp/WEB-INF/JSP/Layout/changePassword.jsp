@@ -29,25 +29,32 @@
                 <div class="box box-primary">
                     <div class="box-header with-border">
                         <h3 class="box-title"></h3>
-                    </div>
-                    <form:form action="" modelAttribute="tblUser" method="post">
-                        <form:hidden path="userid" name="userid" />
+                    </div>   ${Message}
+                    <c:if test="${not empty Message}">
+                        <div class="row" style="margin-left: 0px;" id="SuccessMessage">
+                            <div class="col-md-6  alert alert-success">
+                                ${Message}
+                            </div>
+                        </div>
+                    </c:if>
+                    <form:form action="${pageContext.servletContext.contextPath}/resetPassword/${sessionScope.sessionuser.userid}" modelAttribute="tblUser" method="post">
+                        <form:hidden path="userid" name="userid" value="${sessionScope.sessionuser.userid}"/>
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="Title">Old Password</label>
-                                <form:input path="password" name="password" class="form-control" id="first_name" title="first_name"  placeholder="Enter First Name" autofocus="on"/>
+                                <form:input  path="" name="oldpassword" class="form-control" id="oldpassword" title="oldpassword"  placeholder="Enter Old Password" autofocus="on"/>
                             </div>
                         </div>
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="Title">New Password</label>
-                                <form:input path="password" name="password" class="form-control" id="last_name" title="last_name"  placeholder="Enter Description" autofocus="on"/>
+                                <form:input path="password" name="newpassword" class="form-control" id="newpassword" title="newpassword"  placeholder="Enter New Password"/>
                             </div>
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
                             <input type="submit" name="save" value="Save & Exit" class="btn btn-primary"/>
-                            <input type="button" name="action" value="Cancel" class="btn btn-primary" onclick="window.location.href = '${pageContext.servletContext.contextPath}/viewAdvertisement'"/>
+                            <input type="button" name="action" value="Cancel" class="btn btn-primary" onclick="window.location.href = '${pageContext.servletContext.contextPath}/changePassword'"/>
                         </div>
                     </form:form>
                 </div>

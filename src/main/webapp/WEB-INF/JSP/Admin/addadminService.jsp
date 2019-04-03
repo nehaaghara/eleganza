@@ -55,7 +55,7 @@
                         <div class="box-footer">
                             <input type="submit" name="save" value="Save & Exit" class="btn btn-primary"/>
                             <input type="submit" name="saveAndNew" value="Save & New" class="btn btn-primary"/>
-                            <input type="button" name="action" value="Cancel" class="btn btn-primary" onclick="window.location.href = '${pageContext.servletContext.contextPath}/viewAdvertisement'"/>
+                            <input type="button" name="action" value="Cancel" class="btn btn-primary" onclick="window.location.href = '${pageContext.servletContext.contextPath}/viewAdminService'"/>
                         </div>
                     </form:form>
                 </div>

@@ -28,7 +28,7 @@ public class TblPackage {
     @Id
     @Column(name = "Package_Id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    BigInteger package_Id;
+        BigInteger package_Id;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "serviceId")

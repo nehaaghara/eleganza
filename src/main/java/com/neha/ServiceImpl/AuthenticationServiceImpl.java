@@ -35,5 +35,10 @@ public class AuthenticationServiceImpl implements AuthenticationService{
     public List<TblUser> fetchAllUser() {
         return authenticationRepo.fetchAllUser();
     }
+
+    @Override
+    public String forgotpasswordprocessservice(String email, String password, String conformpassword) {
+      return authenticationRepo.forgotpasswordprocessrepo(email, password, conformpassword);
+    }
     
 }

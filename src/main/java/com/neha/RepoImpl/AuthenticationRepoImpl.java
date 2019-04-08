@@ -40,4 +40,21 @@ public class AuthenticationRepoImpl implements AuthenticationRepo {
         return commonDAO.findEntity(TblUser.class,"tblUserRole.rolePK",OperationTypeEnum.EQ,2);
     }
 
+    @Override
+    public String forgotpasswordprocessrepo(String email, String password, String conformpassword) {
+     List<TblUser> lstuser= commonDAO.findEntity(TblUser.class,"email_address",OperationTypeEnum.EQ,email);
+     if(lstuser.size()>0)
+     {
+         lstuser.get(0).setPassword(password);
+         lstuser.get(0).setConformpassword(conformpassword);
+         commonDAO.saveOrUpdate(lstuser.get(0));
+         return "success";
+     }
+     else
+     {
+         return "notsuccess";
+     }
+    
+    }
+
 }

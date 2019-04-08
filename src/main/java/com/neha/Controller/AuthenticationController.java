@@ -108,4 +108,31 @@ public class AuthenticationController {
 
         return "redirect:/registrationindex";
     }
+    
+    @RequestMapping(value = "/forgotpage")
+    public ModelAndView forgot()
+    {
+        mv.setViewName("Login/forgotpage");
+        return mv;
+    }
+    
+    @RequestMapping(value = "/forgotproccess")
+    public ModelAndView forgotpasswordprocess(HttpServletRequest req)
+    {
+        String email=req.getParameter("emailAddress");
+        String password=req.getParameter("password");
+        String conformpassword=req.getParameter("conformpassword");
+        if(password.equals(conformpassword))
+        {
+            System.out.println("forgot");
+            authenticationService.forgotpasswordprocessservice(email, password, conformpassword);
+            mv.setViewName("redirect:/loginindex");
+        }
+        else
+        {
+            mv.setViewName("redirect:/forgotpage");
+        }
+       
+        return mv;
+    }
 }

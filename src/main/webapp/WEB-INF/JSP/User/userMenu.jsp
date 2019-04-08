@@ -69,6 +69,19 @@
 
             <li class="treeview">
                 <a href="#">
+                    <i class="fa fa-laptop"></i> <span>Appointment</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="${pageContext.servletContext.contextPath}/addAppointment"><i class="fa fa-circle-o"></i> Add Appointment</a></li>
+                    <li><a href="${pageContext.servletContext.contextPath}/viewpromotionpage"><i class="fa fa-circle-o"></i> View Appointment</a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
                     <i class="fa fa-laptop"></i> <span>Profile</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>

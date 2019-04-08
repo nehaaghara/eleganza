@@ -17,11 +17,11 @@
     
     <!--Promation tiles-->
     <definition name="com.neha.promationcampainingtiles" extends="com.neha.adminLayout">
-        <put-attribute name="body" value="/WEB-INF/JSP/User/PromationCampaining.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/PromationCampaining.jsp"></put-attribute>
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
     <definition name="com.neha.viewpromotioncampainingtiles" extends="com.neha.adminLayout">
-        <put-attribute name="body" value="/WEB-INF/JSP/User/viewpromotioncampaining.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/viewpromotioncampaining.jsp"></put-attribute>
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
     <!--Promation tiles-->
@@ -73,6 +73,17 @@
     </definition>
     <!--Admin Service tiles--> 
     
+    <!--Admin Product tiles--> 
+    <definition name="com.neha.addProduct" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/addProduct.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <definition name="com.neha.viewProduct" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/viewProduct.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <!--Admin Product tiles--> 
+    
     <!--view User Interest tiles--> 
     <definition name="com.neha.viewAllUserInterest" extends="com.neha.adminLayout">
         <put-attribute name="body" value="/WEB-INF/JSP/User/viewUserInterest.jsp"></put-attribute>
@@ -95,7 +106,7 @@
     
     <!--view Promation tiles for User-->
     <definition name="com.neha.viewpromotioncampainingtiles" extends="com.neha.userLayout">
-        <put-attribute name="body" value="/WEB-INF/JSP/User/viewpromotioncampaining.jsp"></put-attribute>
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/viewpromotioncampaining.jsp"></put-attribute>
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
     <!--view Promation tiles for User-->
@@ -110,6 +121,17 @@
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
     <!--User Interest tiles-->
+    
+    <!--Appointment tiles-->
+    <definition name="com.neha.addAppointment" extends="com.neha.userLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/User/addAppointment.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <definition name="com.neha.viewAppointment" extends="com.neha.userLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/User/viewAppointment.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <!--Appointment tiles-->
     
     <!--User Profile tiles-->
     <definition name="com.neha.userProfile" extends="com.neha.userLayout">

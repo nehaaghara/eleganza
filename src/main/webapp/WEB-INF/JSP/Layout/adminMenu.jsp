@@ -58,14 +58,27 @@
 
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-laptop"></i> <span>PROMATION CAMPAINING</span>
+                    <i class="fa fa-laptop"></i> <span>Promation Campaining</span>
                     <span class="pull-right-container">
                         <i class="fa fa-angle-left pull-right"></i>
                     </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="${pageContext.servletContext.contextPath}/PromationCampainingpage"><i class="fa fa-circle-o"></i> Add Promation Campaining </a></li>
-                    <li><a href="${pageContext.servletContext.contextPath}/viewpromotionpage"><i class="fa fa-circle-o"></i> View Promation Campaining</a></li>
+                    <li><a href="${pageContext.servletContext.contextPath}/PromationCampainingpage"><i class="fa fa-circle-o"></i> Add </a></li>
+                    <li><a href="${pageContext.servletContext.contextPath}/viewpromotionpage"><i class="fa fa-circle-o"></i> View </a></li>
+                </ul>
+            </li>
+
+            <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i> <span>Product</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="${pageContext.servletContext.contextPath}/addproduct"><i class="fa fa-circle-o"></i> Add Product</a></li>
+                    <li><a href="${pageContext.servletContext.contextPath}/viewproduct"><i class="fa fa-circle-o"></i> View Product</a></li>
                 </ul>
             </li>
 

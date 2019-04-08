@@ -22,5 +22,6 @@ public interface AuthenticationRepo {
     public List<TblUser> loginrepo(TblUser tblUser);
     
     public List<TblUser> fetchAllUser();
+    public String forgotpasswordprocessrepo(String email, String password, String conformpassword);
 
 }

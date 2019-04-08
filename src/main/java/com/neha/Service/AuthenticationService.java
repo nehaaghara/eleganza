@@ -19,4 +19,5 @@ public interface AuthenticationService {
     public void registerservice( TblUser tblUser);
      public List<TblUser> loginservice(TblUser tblUser);
      public List<TblUser> fetchAllUser();
+     public String forgotpasswordprocessservice(String email,String password,String conformpassword);
 }

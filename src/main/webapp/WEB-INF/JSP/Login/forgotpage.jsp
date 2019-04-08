@@ -51,12 +51,6 @@
                         <input type="email" class="form-control" id="emailAddress" title="emailAddress" placeholder="Enter Mail Id" name="emailAddress">
                         <span class="glyphicon glyphicon-user form-control-feedback"></span>
                         <span for="emailAddress" class="help-block"><form:errors path="emailAddress"/></span>
-                        ${result}
-                        <c:set var = "msg"  value = "notvelidemailid"/>
-                        <c:set var = "returnmsg"  value = "${result}"/>
-                          <c:if test = "${msg eq returnmsg}">
-                              <p style="color: red"> Please Enter Velid Email ID <p>
-                        </c:if>
                     </div>
                     <div class="form-group has-feedback">
                         <input type="password" class="form-control"  title="Password" placeholder="Password" name="password">

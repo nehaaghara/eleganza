@@ -117,6 +117,18 @@
                     <li><a href="${pageContext.servletContext.contextPath}/viewuserinterest"><i class="fa fa-circle-o"></i> View </a></li>
                 </ul>
             </li>
+             <li class="treeview">
+                <a href="#">
+                    <i class="fa fa-laptop"></i> <span>Employee Schedule</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                     <li><a href="${pageContext.servletContext.contextPath}/employeeschedulepage"><i class="fa fa-circle-o"></i>Add Employee Schedule</a></li>
+                    <li><a href="${pageContext.servletContext.contextPath}/viewemployeeschedulepage"><i class="fa fa-circle-o"></i> View Employee Schedule</a></li>
+                </ul>
+            </li>
 
 
             <!--            <li class="treeview">

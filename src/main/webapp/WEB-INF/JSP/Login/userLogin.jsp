@@ -56,14 +56,17 @@ Author : ITMCS
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                         <span for="password" class="help-block"><form:errors path="password"/></span>
                     </div>
-                    <center> <div class="row">
+                     <div class="row" style="float:right ; margin:0px 71px 0px 0px">
                             <div class="col-xs-4">
                                 <button style="text-align: center; margin-left:84px" type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
                             </div> 
-                        </div></center>
-                    <div class="row">
+                        </div>
+                    <div class="row" style="margin:0px 0px 0px -64px ">
                         <div class="col-xs-8"> 
-                            <a style=" margin-left:51px" href="${pageContext.servletContext.contextPath}/registrationindex" class="text-center">Register_new_memberShip</a>
+                            <a style=" margin-left:51px" href="${pageContext.servletContext.contextPath}/registrationindex" class="text-center">CreateNewAcount</a>
+                        </div>
+                        <div class="col-xs-8"> 
+                            <a style=" margin-left:51px" href="${pageContext.servletContext.contextPath}/forgotpage" class="text-center">Forgot_Password</a>
                         </div>
                     </div> 
                     <!-- /.col -->

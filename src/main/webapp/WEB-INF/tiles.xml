@@ -25,7 +25,12 @@
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
     <!--Promation tiles-->
-      
+      <!--employee schedule tiles-->
+      <definition name="com.neha.employeescheduletiles" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/addempschedule.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+       <!--employee schedule tiles-->
     <!--Advertise Topic tiles-->
     <definition name="com.neha.addAdvertisementTopic" extends="com.neha.adminLayout">
         <put-attribute name="body" value="/WEB-INF/JSP/Admin/addAdvertisementTopic.jsp"></put-attribute>
@@ -47,6 +52,13 @@
     <!--Admin change password tiles-->
     <definition name="com.neha.changePassword" extends="com.neha.adminLayout">
         <put-attribute name="body" value="/WEB-INF/JSP/Layout/changePassword.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <!--Admin change password tiles-->
+      
+    <!--Admin change password tiles-->
+    <definition name="com.neha.viewemployeescheduletiles" extends="com.neha.adminLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/Admin/viewemployeeschedule.jsp"></put-attribute>
         <put-attribute name="title" value="gruhudhyog"></put-attribute>
     </definition>
     <!--Admin change password tiles-->

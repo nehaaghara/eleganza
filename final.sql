@@ -27,7 +27,7 @@ CREATE TABLE `tbl_adminservice` (
   `Charges` varchar(50) NOT NULL,
   `Flag` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`Service_Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_adminservice` */
 
@@ -38,7 +38,8 @@ insert  into `tbl_adminservice`(`Service_Id`,`ServiceName`,`Description`,`Charge
 (4,'Pedicure','lauhcbuqooo bbb ','150',0),
 (8,'Smoothening','doffueiqfnpn','4000',0),
 (9,'abc','hslahcdl','123',0),
-(10,'Spa','nothing','10000000',0);
+(10,'Spa','nothing','10000000',0),
+(11,'','','',0);
 
 /*Table structure for table `tbl_advttopic` */
 
@@ -103,19 +104,21 @@ DROP TABLE IF EXISTS `tbl_package`;
 CREATE TABLE `tbl_package` (
   `Package_Id` bigint(11) NOT NULL AUTO_INCREMENT,
   `packageName` varchar(30) DEFAULT NULL,
-  `serviceId` bigint(11) DEFAULT NULL,
   `CreationDate` varchar(25) NOT NULL,
   `ExpiryDate` varchar(25) NOT NULL,
   `Description` varchar(500) NOT NULL,
   `Cost` varchar(50) NOT NULL,
   `Flag` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`Package_Id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_package` */
 
-insert  into `tbl_package`(`Package_Id`,`packageName`,`serviceId`,`CreationDate`,`ExpiryDate`,`Description`,`Cost`,`Flag`) values 
-(12,'Summer Package',NULL,'2019-04-09','2019-04-20','no','1000',1);
+insert  into `tbl_package`(`Package_Id`,`packageName`,`CreationDate`,`ExpiryDate`,`Description`,`Cost`,`Flag`) values 
+(12,'Summer Package','2019-04-09','2019-04-20','no','1000',1),
+(14,'winter','2019-04-04','2019-04-19','flat 10% off','300',1),
+(16,'qwq','2019-04-02','2019-04-19','sa','20000',1),
+(17,'qwq','2019-04-02','2019-04-19','sa','20000',1);
 
 /*Table structure for table `tbl_packageservice` */
 
@@ -127,7 +130,7 @@ CREATE TABLE `tbl_packageservice` (
   `packageFk` bigint(11) NOT NULL,
   `flag` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`packageServiceId`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_packageservice` */
 
@@ -142,7 +145,8 @@ insert  into `tbl_packageservice`(`packageServiceId`,`serviceFk`,`packageFk`,`fl
 (22,8,6,1),
 (23,2,11,1),
 (24,2,11,1),
-(25,4,11,1);
+(25,4,11,1),
+(27,2,14,1);
 
 /*Table structure for table `tbl_payment` */
 
@@ -227,7 +231,7 @@ CREATE TABLE `tbl_user` (
 
 insert  into `tbl_user`(`UserId`,`first_name`,`last_name`,`email_address`,`roleFk`,`gender`,`address`,`city`,`pincode`,`state`,`contect`,`userName`,`password`,`conformpassword`,`flag`) values 
 (1,'Donald','Duck','donaldduck@gmail.com',1,'male','','Gandhiinagar',382465,'Gujarat',65234178,'dd','1','1',0),
-(2,'Hiral','shah','hiral@gmail.com',2,'Female','','Ahmedabad',382415,'Gujarat',99746589,'hiral','1510','1510',0),
+(2,'Hiral','shah','hiral123@gmail.com',2,'Female','','Ahmedabad',382415,'Gujarat',99746589,'hiral123','123','123',0),
 (3,'Neha','Basera','neha@gmail.com',3,'Female','','Ahmedabad',382423,'Gujarat',70156985,'neha','0411','0411',0),
 (4,'Drishti','Patel','dristipatel@gmail.com',2,'Female','','Vadodra',456987,'Gujarat',25698745,'drst','2008','2008',0),
 (12,'vikassssssss','hingu','vikas@gmail.com',3,'male','cdcsdcsdcdscdsdcd','ahmedabad',380016,'AS',8140,'vikas','123123aA','123123aA',1);
@@ -241,14 +245,16 @@ CREATE TABLE `tbl_userinterest` (
   `topic_Id` bigint(11) NOT NULL,
   `userId` bigint(11) NOT NULL,
   PRIMARY KEY (`interestId`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 /*Data for the table `tbl_userinterest` */
 
 insert  into `tbl_userinterest`(`interestId`,`topic_Id`,`userId`) values 
 (1,1,3),
 (2,1,2),
-(3,1,2);
+(3,1,2),
+(4,1,2),
+(5,1,2);
 
 /*Table structure for table `tbl_userrole` */
 

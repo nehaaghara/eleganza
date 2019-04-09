@@ -17,7 +17,7 @@
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-             Package
+            Package
             <small>
                 Add
             </small>
@@ -32,41 +32,22 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">Add Package</h3>
                     </div>
-                    <form:form action="${pageContext.servletContext.contextPath}/saveAdminPackage" modelAttribute="adminPackageServiceBean" method="post">
+                    <form:form action="${pageContext.servletContext.contextPath}/saveAdminPackage" modelAttribute="adminPackageServiceBean" method="post" onsubmit="return submitService(this);">
                         <form:hidden path="tblPackage.package_Id" name="tblPackage.package_Id" />
                         <div class="box-body">
                             <div class="form-group">
-                                <label for="serviceName">Creation Date </label>
-                                <form:input type="date" path="tblPackage.creationDate" class="form-control form-filter input-sm" name="tblPackage.creationDate" placeholder="" />        
+                                <label for="packageName">Package Name</label>
+                                <form:input type="text" path="tblPackage.packageName" required="true" class="form-control form-filter input-sm" name="packageName" placeholder="Enter Package Name" />        
                             </div>
-                        </div>
-                        <div class="box-body">
-                            <div class="form-group">
-                                <label for="description">Expiry Date</label>
-                                <form:input type="date" path="tblPackage.expiryDate" placeholder="" class="form-control form-filter input-sm" name="tblPackage.expiryDate" />
-                            </div>
-                        </div>
-                        <div class="box-body">
-                            <div class="form-group">
-                                <label for="charges">Description</label>
-                                <form:textarea  path="tblPackage.description" class="form-control form-filter input-sm" name="tblPackage.description"/>
-                            </div>
-                        </div>
-                        <div class="box-body">
-                            <div class="form-group">
-                                <label for="charges">Cost</label>
-                                <form:input path="tblPackage.cost" name="tblPackage.cost" type="text" class="form-control"/>
-                            </div>
-                        </div>
-                         <div class="panel-body" id="dvserviceIds"> 
+                            <div class="panel-body" id="dvserviceIds"> 
                                 <c:if test="${not empty lstPackageServices}">
                                     <div id="services" value="${fn:length(lstPackageServices)}"></div> 
                                     <c:forEach items="${lstPackageServices}" var='idEntry' varStatus='loop'>
-                                        <div class="row" id="dvserviceIds${loop.index+1}" style="margin: -12px -15px;">
+                                        <div class="row" id="dvserviceIds${loop.index+1}" style="margin: -12px -28px;">
                                             <div class="col-md-10">
                                                 <div class="form-group">
                                                     <label for="serviceFK">Select Service</label>
-                                                    <form:select path="services[${loop.index}]" title="Service" name="services[${loop.index}]" id="serviceFk${loop.index+1}" onchange="DrpServiceChange(this);" class="form-control select2" style="width: 100%;">
+                                                    <form:select path="services[${loop.index}]" title="Service" required="true" name="services[${loop.index}]" id="serviceFk${loop.index+1}" onchange="DrpServiceChange(this);" onblur="return submitService(this);" class="form-control select2" style="width: 100%;">
                                                         <option value="-1" disabled="true" selected="true">Please Select</option>
                                                         <c:forEach items='${lstAdminServices}' var='entry'>
                                                             <c:if test="${entry.service_Id eq idEntry.serviceFk.service_Id}">
@@ -97,11 +78,11 @@
                                     </c:forEach>
                                 </c:if>
                                 <c:if test="${empty lstPackageServices}">
-                                    <div class="row" id="dvserviceIds1" style="margin: -12px -15px;">    
+                                    <div class="row" id="dvserviceIds1" style="margin: -12px -28px;">    
                                         <div class="col-md-10">
                                             <div class="form-group">
                                                 <label for="serviceFK">Select Service</label>
-                                                <form:select path="services[0]" title="Service" name="services[0]" id="serviceFk1" class="form-control select2" onchange="DrpServiceChange(this);" style="width: 100%;">
+                                                <form:select path="services[0]" required="true" title="Service" name="Service" id="serviceFk1" class="form-control select2" onchange="DrpServiceChange(this);"  onblur="submitService(this);" style="width: 100%;">
                                                     <option value="-1" disabled="true" selected="true">Please Select</option>
                                                     <c:forEach items='${lstAdminServices}' var='entry'>
                                                         <option value="${entry.service_Id}">${entry.serviceName}</option> 
@@ -119,6 +100,30 @@
                                     </div>
                                 </c:if>
                             </div>
+                            <div class="form-group">
+                                <label for="serviceName">Creation Date </label>
+                                <form:input type="date" path="tblPackage.creationDate" required="true" class="form-control form-filter input-sm" name="tblPackage.creationDate" placeholder="" />        
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="description">Expiry Date</label>
+                                <form:input type="date" path="tblPackage.expiryDate" required="true" placeholder="" class="form-control form-filter input-sm" name="tblPackage.expiryDate" />
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="charges">Description</label>
+                                <form:textarea  path="tblPackage.description" required="true" class="form-control form-filter input-sm" name="tblPackage.description"/>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="charges">Cost</label>
+                                <form:input path="tblPackage.cost" required="true" name="tblPackage.cost" type="text" class="form-control"/>
+                            </div>
+                        </div>
+
                         <!-- /.box-body -->
                         <div class="box-footer">
                             <input type="submit" name="save" value="Save & Exit" class="btn btn-primary"/>
@@ -133,4 +138,21 @@
 </div>
 <!-- /.content-wrapper -->
 <script src="${pageContext.servletContext.contextPath}/webresource/js/userJs/AdminServiceJs.js"></script>
-
+<script src="${pageContext.servletContext.contextPath}/webresource/js/userJs/commonJs.js"></script>
+<script>
+    
+    function submitService() {
+    $('.error').remove();
+    var errorCount = 0;
+    if ($('#serviceFk1').val() == null) {
+        errorCount++;
+        addErrormessage('serviceFk1', 'Required');
+    } 
+  
+      if (parseInt(errorCount) > 0) {
+        return false;
+    } else {
+        return true;
+    }
+    }   
+</script>

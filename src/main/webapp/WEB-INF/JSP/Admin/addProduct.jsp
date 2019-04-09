@@ -36,25 +36,25 @@
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="serviceName">Product Name </label>
-                                <form:input path="productName" name="productName" class="form-control" id="productName" title="productName"  placeholder="Enter Product Name" autofocus="on"/>
+                                <form:input path="productName" name="productName" required="true" class="form-control" id="productName" title="productName"  placeholder="Enter Product Name" autofocus="on"/>
                             </div>
                         </div>
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="manufacture">Manufacture</label>
-                                <form:input path="manufacture" name="manufacture" class="form-control" id="manufacture" title="manufacture"  placeholder="Enter Manufacture" />
+                                <form:input path="manufacture" name="manufacture" required="true" class="form-control" id="manufacture" title="manufacture"  placeholder="Enter Manufacture" />
                             </div>
                         </div>
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="description">Description</label>
-                                <form:input path="description" name="description" class="form-control" id="description" title="description"  placeholder="Enter Description" />
+                                <form:input path="description" name="description" required="true" class="form-control" id="description" title="description"  placeholder="Enter Description" />
                             </div>
                         </div>
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="cost">Cost</label>
-                                <form:input path="cost" name="cost" class="form-control" id="cost" title="cost"  placeholder="Enter Cost" />
+                                <form:input path="cost" name="cost" class="form-control" required="true" id="cost" title="cost"  placeholder="Enter Cost" />
                             </div>
                         </div>
                         <!-- /.box-body -->

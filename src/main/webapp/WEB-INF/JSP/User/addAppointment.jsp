@@ -31,16 +31,24 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">Take Appointment</h3>
                     </div>
-                    <form:form action="${pageContext.servletContext.contextPath}/saveappointment" modelAttribute="tblAppointment" method="get">
+                    <form:form action="${pageContext.servletContext.contextPath}/saveappointment" modelAttribute="tblAppointment" method="post">
                         <form:hidden path="appointmentId" name="appointmentId" />
                         <div class="box-body">
 
                             <div class="form-group">
                                 <label for="exampleInputAdminBrand">Your Name</label>
-                                <form:input path="userFk.userid" readonly="true" class="form-control" value="${sessionScope.sessionuser.username}" placeholder="Enter Name" autofocus="on"/>
+                                <form:label path="userFk.userid" name="title" class="form-control">${sessionScope.sessionuser.first_name}</form:label>
                                 <span for="userFk" class="help-block"><form:errors path="userFk"/></span>
                             </div>
-
+                            <div class="form-group">
+                                <label for="Title">Select Employee</label>
+                                <form:select path="empFk.empid" title="empid" name="empFk.empid" id="empid" class="form-control select2" style="width: 100%;">
+                                    <option value="-1" disabled="true" selected="true">Please Select</option>
+                                    <c:forEach items='${lstEmployee}' var='entry'>
+                                        <option value="${entry.empid}">${entry.tblUser.first_name}</option> 
+                                    </c:forEach>  
+                                </form:select>
+                            </div>
                             <div class="form-group">
                                 <label for="exampleInputAdminBrand">Date</label>
                                 <form:input type="date"  path="transientdate" class="form-control"  placeholder="Enter Date" />
@@ -50,11 +58,6 @@
                                 <label for="exampleInputAdminBrand">Time</label>
                                 <form:input type="time" path="transienttime"  class="form-control" placeholder="Enter Time" />
                                 <span for="transienttime" class="help-block"><form:errors path="transienttime"/></span>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputAdminBrand">Discount</label>
-                                <form:input path="discount"  class="form-control" placeholder="Enter Discount" />
-                                <span for="discount" class="help-block"><form:errors path="discount"/></span>
                             </div>
                         </div>
                         <!-- /.box-body -->

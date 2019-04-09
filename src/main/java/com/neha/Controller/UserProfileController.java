@@ -58,7 +58,7 @@ public class UserProfileController {
     }
 
     @RequestMapping(value = "/resetPassword/{userid}", method = RequestMethod.POST)
-    public String resetPassword(HttpServletRequest request, @ModelAttribute("tblUser") TblUser changepassword, @PathVariable("userid") BigInteger userid, RedirectAttributes redirectAttributes) {
+    public String resetPassword(Model model,HttpServletRequest request, @ModelAttribute("tblUser") TblUser changepassword, @PathVariable("userid") BigInteger userid, RedirectAttributes redirectAttributes) {
         TblUser lstuser = (TblUser) request.getSession(false).getAttribute("sessionuser");
         String role = lstuser.getTblUserRole().getRoleName();
 
@@ -76,6 +76,7 @@ public class UserProfileController {
             }
         }
         if (response.equalsIgnoreCase("Enter correct Old Password")) {
+            model.addAttribute("errorMessage","Please Enter correct Old Password");
             return "com.neha.changePassword";
         }
         return "com.neha.changePassword";

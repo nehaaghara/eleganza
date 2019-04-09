@@ -23,6 +23,7 @@ public class IndexController {
     public String index() {
         System.out.println("vikas");
         return "redirect:/loginindex";
+       // return "User/UserDesign/home";
     }
 
     @RequestMapping(value = "/dashboard")

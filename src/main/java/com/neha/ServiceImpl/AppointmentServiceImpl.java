@@ -30,20 +30,8 @@ public class AppointmentServiceImpl implements AppointmentService {
 
     @Override
     public String saveAppointment(TblAppointment tblAppointment) {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        Date dt;
-        try {
-            dt = formatter.parse(tblAppointment.getTransientdate());
-            tblAppointment.setDate(dt);
-            formatter = new SimpleDateFormat("HH:mm");
-            java.sql.Time timeValue = new java.sql.Time(formatter.parse(tblAppointment.getTransienttime()).getTime());
-            tblAppointment.setTime(timeValue);
             appointmentRepository.saveAppointment(tblAppointment);
-            return "Save Successfully";
-        } catch (ParseException ex) {
-           ex.printStackTrace();
-        }
-        return null;
+            return "Saved Successfully";
     }
 
     @Override
@@ -70,7 +58,6 @@ public class AppointmentServiceImpl implements AppointmentService {
         oldvalue.setUserFk(tblAppointment.getUserFk());
         oldvalue.setDate(tblAppointment.getDate());
         oldvalue.setTime(tblAppointment.getTime());
-        oldvalue.setDiscount(tblAppointment.getDiscount());
         oldvalue.setFlag(1);
         appointmentRepository.updateAppointmentById(tblAppointment);
         return "Update Successfully";

@@ -30,19 +30,10 @@ function submitProfile() {
         }
     }
 
-//    if ($('#email_address').val() == '') {
-//        errorCount++;
-//        addErrormessage('email_address', 'Required');
-//    } else {
-//        if (!emailValidation('email_address')) {
-//            errorCount++;
-//        }
-//    }
-    
-      if ($('#email_address').val() == '') {
+    if ($('#email_address').val() == '') {
         errorCount++;
         addErrormessage('email_address', 'Required');
-    } 
+    }
     if ($('#contect').val() == '') {
         errorCount++;
         addErrormessage('contect', 'Required');

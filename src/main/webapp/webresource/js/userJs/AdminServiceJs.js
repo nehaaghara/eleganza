@@ -10,7 +10,7 @@ var countLegal = 1;
 function fnAddServiceRow() {
     debugger;
     service++;
-    var div1 = $('<div class="row" id="dvserviceIds' + service + '" style="margin: -12px -15px;"></div>').appendTo('#dvserviceIds');
+    var div1 = $('<div class="row" id="dvserviceIds' + service + '" style="margin: -12px -28px;"></div>').appendTo('#dvserviceIds');
     var div2 = $('<div class="col-md-10"></div>').appendTo(div1);
     var div3 = $('<div class="form-group"></div>').appendTo(div2);
     $('<label for="serviceFK">Select Service</label>').appendTo(div3);

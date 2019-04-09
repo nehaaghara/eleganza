@@ -145,6 +145,17 @@
     </definition>
     <!--Appointment tiles-->
     
+      <!--Payment tiles-->
+    <definition name="com.neha.addPayment" extends="com.neha.userLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/User/addPayment.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <definition name="com.neha.viewPayment" extends="com.neha.userLayout">
+        <put-attribute name="body" value="/WEB-INF/JSP/User/viewPayment.jsp"></put-attribute>
+        <put-attribute name="title" value="gruhudhyog"></put-attribute>
+    </definition>
+    <!--Payment tiles-->
+    
     <!--User Profile tiles-->
     <definition name="com.neha.userProfile" extends="com.neha.userLayout">
         <put-attribute name="body" value="/WEB-INF/JSP/Layout/userProfile.jsp"></put-attribute>

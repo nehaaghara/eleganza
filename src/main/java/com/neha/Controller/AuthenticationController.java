@@ -68,6 +68,7 @@ public class AuthenticationController {
             }
 
         } else {
+            model.addAttribute("errorMessage","Your UserName or password is incorrect");
             return "Login/userLogin";
         }
     }

@@ -36,19 +36,19 @@
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="serviceName">Service Name: </label>
-                                <form:input path="serviceName" name="serviceName" class="form-control" id="serviceName" title="serviceName"  placeholder="Enter Service Name" autofocus="on"/>
+                                <form:input path="serviceName" name="serviceName" required="true" class="form-control" id="serviceName" title="serviceName"  placeholder="Enter Service Name" autofocus="on"/>
                             </div>
                         </div>
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="description">Description</label>
-                                <form:input path="description" name="description" class="form-control" id="description" title="description"  placeholder="Enter Description" />
+                                <form:input path="description" name="description" required="true" class="form-control" id="description" title="description"  placeholder="Enter Description" />
                             </div>
                         </div>
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="charges">Charges</label>
-                                <form:input path="charges" name="charges" class="form-control" id="charges" title="charges"  placeholder="Enter Charges" />
+                                <form:input path="charges" name="charges" required="true" class="form-control" id="charges" title="charges"  placeholder="Enter Charges" />
                             </div>
                         </div>
                         <!-- /.box-body -->

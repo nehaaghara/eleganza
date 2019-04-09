@@ -7,17 +7,18 @@
 <%@taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <div class="content-wrapper">
     <section class="content-header">
         <h1>
-            Advertisement
+            Payment
             <small>view</small>
         </h1>
         <br>
-        <input type="button" class="btn btn-primary" name="addAdminPackage" value="Add Admin Package" onclick="window.location.href = '${pageContext.servletContext.contextPath}/addAdminPackage'">
+        <input type="button" class="btn btn-primary" name="addPayment" value="Add Payment" onclick="window.location.href = '${pageContext.servletContext.contextPath}/addPayment'">
     </section>
     <section class="content">
         <div class="row">
@@ -52,27 +53,23 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
-                                    <th>Pacakge Name</th>
-                                    <th>Creation Date</th>
-                                    <th>Expiry Date</th>
-                                    <th>Description</th>
-                                    <th>Charges</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th>Name of User</th>
+                                    <th>Package Name</th>
+                                    <th>Payable Amount</th>
+                                    <!--                                    <th>Edit</th>-->
+<!--                                    <th>Delete</th>-->
                                 </tr>
                             </thead>
                             <tbody>
                                 <c:set var="count" value="1"/>
-                                <c:forEach items="${lstPackages}" var="entry">
+                                <c:forEach items="${lstPayments}" var="entry">
                                     <tr>
                                         <td>${count}</td>
-                                        <td>${entry.packageName}</td>
-                                        <td>${entry.creationDate}</td>
-                                        <td>${entry.expiryDate}</td>
-                                        <td>${entry.description}</td>
-                                         <td>${entry.cost}</td>
-                                        <td><a href="${pageContext.servletContext.contextPath}/editAdminPackage/${entry.package_Id}" style="font-size: 22px;"><i class="fa fa-edit"></i></a></td>
-                                       <td><a href="${pageContext.servletContext.contextPath}/deleteAdminPackage/${entry.package_Id}" style="font-size: 22px;"><i class="fa fa-trash"></i></a></td>
+                                        <td>${entry.userFk.first_name}</td>
+                                        <td>${entry.packageFk.packageName}</td>
+                                        <td>${entry.amount}</td>
+<!--                                        <td><a href="${pageContext.servletContext.contextPath}/editAppointment/${entry.paymentId}" style="font-size: 22px;"><i class="fa fa-edit"></i></a></td>-->
+<!--                                        <td><a href="${pageContext.servletContext.contextPath}/deleteAppointment/${entry.paymentId}" style="font-size: 22px;"><i class="fa fa-trash"></i></a></td>-->
 
                                     </tr>
                                     <c:set var="count" value="${count+1}"/>

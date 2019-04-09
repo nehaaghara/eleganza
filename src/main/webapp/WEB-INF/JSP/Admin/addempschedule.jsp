@@ -28,31 +28,29 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">Add Employee Schedule</h3>
                     </div>
-                    <form:form action="${pageContext.servletContext.contextPath}/savedataofemployeeschedule" modelAttribute="emplyoeeSchedule" method="get">
+                    <form:form action="${pageContext.servletContext.contextPath}/savedataofemployeeschedule" modelAttribute="emplyoeeSchedule" method="get" onsubmit="return submitEmp();">
                         <form:hidden path="empid" name="empid" />
                         <div class="box-body">
                          
                             <div class="form-group">
-                                <label for="exampleInputAdminBrand">User:</label></br>
-                                <form:select path="tblUser.userid" style="width:100% " class="form-control select2">
+                                <label for="User">User:</label></br>
+                                <form:select path="tblUser.userid" style="width:100% " id="userId" class="form-control select2" onblur="return submitEmp();">
                                 <option value="-1" disabled="true" selected="true">Please Select</option>
                                     <c:forEach var="user" items="${alluser}">
-                                          <option value="${user.userid}"  selected="true">${user.username}</option>
+                                          <option value="${user.userid}">${user.username}</option>
                                     </c:forEach>
                                 </form:select>
-                                
+                                 <span for="tblUser.userid" class="help-block"><form:errors path="tblUser.userid"/></span>
                             </div>
                            
                             <div class="form-group">
-                                <label for="exampleInputAdminBrand">Date</label>
-                                <form:input type="date"  path="temdate" class="form-control"  placeholder="Description" />
-                                <span for="brandName" class="help-block"><form:errors path="temdate"/></span>
-                            </div>
+                                <label for="Date">Date</label>
+                                <form:input type="date"  path="temdate" class="form-control"  id="date" required="true" placeholder="Description" />
+                               </div>
                         <div class="form-group">
-                                <label for="exampleInputAdminBrand">Time</label>
-                                <form:input type="time" path="temtime"  class="form-control" placeholder="time" />
-                                <span for="brandName" class="help-block"><form:errors path="temtime"/></span>
-                            </div>
+                                <label for="Time">Time</label>
+                                <form:input type="time" path="temtime"  class="form-control" id="time" required="true"  placeholder="time" />
+                                   </div>
                         </div>
                         <!-- /.box-body -->
                         <div class="box-footer">
@@ -67,6 +65,23 @@
 </div>
 </div>
 <!-- /.content-wrapper -->
-
+<script src="${pageContext.servletContext.contextPath}/webresource/js/userJs/commonJs.js"></script>
+<script>
+    
+    function submitEmp() {
+      $('.error').remove();
+    var errorCount = 0;
+    if ($('#userId').val() == null) {
+        errorCount++;
+        addErrormessage('userId', 'Required');
+    } 
+  
+      if (parseInt(errorCount) > 0) {
+        return false;
+    } else {
+        return true;
+    }
+    }
+</script>
 
 

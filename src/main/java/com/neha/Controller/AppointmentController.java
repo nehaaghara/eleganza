@@ -6,8 +6,13 @@
 package com.neha.Controller;
 
 import com.neha.Service.AppointmentService;
+import com.neha.Service.EmployeeScheduleService;
 import com.neha.model.TblAppointment;
+import com.neha.model.TblUser;
 import java.math.BigInteger;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +34,13 @@ public class AppointmentController {
     @Autowired
     AppointmentService appointmentService;
 
+    @Autowired
+    EmployeeScheduleService employeeScheduleService;
+
     @RequestMapping(value = "/addAppointment", method = RequestMethod.GET)
     public String addAppointment(Model model) {
         model.addAttribute("tblAppointment", new TblAppointment());
+        model.addAttribute("lstEmployee", employeeScheduleService.showemployeeschedulepageservice());
         return "com.neha.addAppointment";
     }
 
@@ -42,12 +51,23 @@ public class AppointmentController {
         return "com.neha.viewAppointment";
     }
 
-    @RequestMapping(value = "/saveappointment", method = RequestMethod.GET)
-    public String saveAppointment(HttpServletRequest request, @ModelAttribute("tblAppointment") TblAppointment addTblAppointment, RedirectAttributes redirectAttributes) {
-        System.out.println("in controller");
+    @RequestMapping(value = "/saveappointment", method = RequestMethod.POST)
+    public String saveAppointment(HttpServletRequest request, @ModelAttribute("tblAppointment") TblAppointment addTblAppointment, RedirectAttributes redirectAttributes) throws ParseException {
         String response = null;
+        addTblAppointment.setFlag(1);
+        TblUser tblUser = new TblUser();
+        TblUser lstuser = (TblUser) request.getSession(false).getAttribute("sessionuser");
+        tblUser.setUserid(lstuser.getUserid());
+        addTblAppointment.setUserFk(tblUser);
+        
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        Date dt = formatter.parse(addTblAppointment.getTransientdate());
+        addTblAppointment.setDate(dt);
+        formatter = new SimpleDateFormat("HH:mm");
+        java.sql.Time timeValue = new java.sql.Time(formatter.parse(addTblAppointment.getTransienttime()).getTime());
+        addTblAppointment.setTime(timeValue);
+
         if (addTblAppointment.getAppointmentId() == null) {
-            System.out.println("in if"+addTblAppointment.getDiscount());
             response = appointmentService.saveAppointment(addTblAppointment);
             redirectAttributes.addFlashAttribute("SuccessMessage", response);
         } else {
@@ -69,7 +89,7 @@ public class AppointmentController {
         return "com.neha.addAppointment";
     }
 
-    @RequestMapping(value = "/deleteproduct/{appointmentId}", method = RequestMethod.GET)
+    @RequestMapping(value = "/deleteAppointment/{appointmentId}", method = RequestMethod.GET)
     public String deleteAppointment(@PathVariable("appointmentId") BigInteger appointmentId) {
         appointmentService.deleteAppointmentById(appointmentId);
         return "redirect:/viewAppointment";

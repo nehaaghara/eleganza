@@ -35,10 +35,10 @@ public class TblAppointment {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "userFk")
     TblUser userFk;
-//
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @JoinColumn(name = "empFk")
-//     empFk;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "empFk")
+    TblEmployeeSchedule empFk;
 
     @Column(name = "date")
     Date date;
@@ -51,9 +51,6 @@ public class TblAppointment {
 
     @Transient
     String transienttime;
-
-    @Column(name = "discount")
-    int discount;
 
     @Column(name = "flag")
     int flag;
@@ -82,13 +79,13 @@ public class TblAppointment {
         this.userFk = userFk;
     }
 
-//    public TblAdminService getEmpFk() {
-//        return empFk;
-//    }
-//
-//    public void setEmpFk(TblAdminService empFk) {
-//        this.empFk = empFk;
-//    }
+    public TblEmployeeSchedule getEmpFk() {
+        return empFk;
+    }
+
+    public void setEmpFk(TblEmployeeSchedule empFk) {
+        this.empFk = empFk;
+    }
     public Date getDate() {
         return date;
     }
@@ -103,14 +100,6 @@ public class TblAppointment {
 
     public void setTime(Time time) {
         this.time = time;
-    }
-
-    public int getDiscount() {
-        return discount;
-    }
-
-    public void setDiscount(int discount) {
-        this.discount = discount;
     }
 
     public String getTransientdate() {

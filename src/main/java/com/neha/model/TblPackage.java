@@ -28,11 +28,14 @@ public class TblPackage {
     @Id
     @Column(name = "Package_Id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-        BigInteger package_Id;
+    BigInteger package_Id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "serviceId")
-    TblAdminService serviceId;
+    @Column(name = "packageName")
+    String packageName;
+
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "serviceId")
+//    TblAdminService serviceId;
 
     @Column(name = "CreationDate")
     String creationDate;
@@ -44,7 +47,7 @@ public class TblPackage {
     String description;
 
     @Column(name = "Cost")
-        String cost;
+    String cost;
 
     @Column(name = "Flag")
     int flag;
@@ -57,13 +60,21 @@ public class TblPackage {
         this.package_Id = package_Id;
     }
 
-    public TblAdminService getServiceId() {
-        return serviceId;
+    public String getPackageName() {
+        return packageName;
     }
 
-    public void setServiceId(TblAdminService serviceId) {
-        this.serviceId = serviceId;
+    public void setPackageName(String packageName) {
+        this.packageName = packageName;
     }
+    
+//    public TblAdminService getServiceId() {
+//        return serviceId;
+//    }
+//
+//    public void setServiceId(TblAdminService serviceId) {
+//        this.serviceId = serviceId;
+//    }
 
     public String getCreationDate() {
         return creationDate;
@@ -81,7 +92,6 @@ public class TblPackage {
         this.expiryDate = expiryDate;
     }
 
-   
     public String getDescription() {
         return description;
     }

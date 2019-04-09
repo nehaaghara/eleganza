@@ -36,13 +36,13 @@
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="Title">Advertisement Topic</label>
-                                <form:input path="title" name="title" class="form-control" id="Title" title="Title"  placeholder="Enter Title" autofocus="on"/>
+                                <form:input path="title" name="title" class="form-control" id="Title" title="Title"  placeholder="Enter Title" required="true" autofocus="on"/>
                             </div>
                         </div>
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="Title">Description</label>
-                                <form:input path="description" name="description" class="form-control" id="Description" title="Description"  placeholder="Enter Description" autofocus="on"/>
+                                <form:input path="description" name="description" class="form-control" id="Description" title="Description"  required="true" placeholder="Enter Description" autofocus="on"/>
                             </div>
                         </div>
                         <!-- /.box-body -->

@@ -37,22 +37,22 @@
                            
                              <div class="form-group">
                                 <label for="exampleInputAdminBrand">Title</label>
-                                <form:input path="title" class="form-control"  placeholder="Title" autofocus="on"/>
+                                <form:input path="title" class="form-control"  required="true" placeholder="Title" autofocus="on"/>
                                 <span for="brandName" class="help-block"><form:errors path="title"/></span>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputAdminBrand">Description</label>
-                                <form:input path="description"  class="form-control"  placeholder="Description" />
+                                <form:input path="description"  class="form-control" required="true"  placeholder="Description" />
                                 <span for="brandName" class="help-block"><form:errors path="description"/></span>
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputAdminBrand">Date</label>
-                                <form:input type="date"  path="date" class="form-control"  placeholder="Description" />
+                                <form:input type="date"  path="date" class="form-control" required="true"  placeholder="Description" />
                                 <span for="brandName" class="help-block"><form:errors path="date"/></span>
                             </div><!--
 -->                         <div class="form-group">
                                 <label for="exampleInputAdminBrand">Time</label>
-                                <form:input type="time" path="time"  class="form-control" placeholder="time" />
+                                <form:input type="time" path="time"  class="form-control" required="true"  placeholder="time" />
                                 <span for="brandName" class="help-block"><form:errors path="time"/></span>
                             </div>
                         </div>

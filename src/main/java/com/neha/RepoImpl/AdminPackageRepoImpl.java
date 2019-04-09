@@ -50,5 +50,7 @@ public class AdminPackageRepoImpl implements AdminPackageRepo{
     public void updateAdminPackageById(TblPackage tblAdminPackage) {
         commonDao.update(tblAdminPackage);
     }
+
+   
     
 }

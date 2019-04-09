@@ -56,7 +56,7 @@
                         <div class="box-body">
                             <div class="form-group">
                                 <label for="Title">Email Address</label>
-                                <form:input path="email_address" name="email_address" value="${sessionScope.sessionuser.email_address}" class="form-control" id="email_address" title="email_address"  validator="required,email" onblur="validate(this)" placeholder="Enter Mail Id" autofocus="on"/>
+                                <form:input path="email_address" name="email_address" value="${sessionScope.sessionuser.email_address}" class="form-control" id="email_address" title="email_address"  validator="required" onblur="validate(this)" placeholder="Enter Mail Id" autofocus="on"/>
                                 <span for="email_address" class="help-block"><form:errors path="email_address"/></span>
                             </div>
                         </div>

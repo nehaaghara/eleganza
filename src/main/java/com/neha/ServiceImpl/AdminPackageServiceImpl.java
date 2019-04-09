@@ -25,7 +25,8 @@ public class AdminPackageServiceImpl implements AdminPackageService {
     
     @Override
     public String saveAdminPackage(TblPackage tblAdminPackage) {
-        tblAdminPackage.setServiceId(tblAdminPackage.getServiceId());
+       // tblAdminPackage.setServiceId(tblAdminPackage.getServiceId());
+        tblAdminPackage.setPackageName(tblAdminPackage.getPackageName());
         tblAdminPackage.setCreationDate(tblAdminPackage.getCreationDate());
         tblAdminPackage.setExpiryDate(tblAdminPackage.getExpiryDate());
         tblAdminPackage.setDescription(tblAdminPackage.getDescription());
@@ -56,6 +57,7 @@ public class AdminPackageServiceImpl implements AdminPackageService {
     @Override
     public String updateAdminPackageById(TblPackage tblAdminPackage) {
         TblPackage oldValue = adminPackageRepo.fetchAdminPackageById(tblAdminPackage.getPackage_Id());
+        oldValue.setPackageName(tblAdminPackage.getPackageName());
         oldValue.setCreationDate(tblAdminPackage.getCreationDate());
         oldValue.setExpiryDate(tblAdminPackage.getExpiryDate());
         oldValue.setDescription(tblAdminPackage.getDescription());

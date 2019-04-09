@@ -27,5 +27,5 @@ public interface AdminPackageRepo {
     public void deleteAdminPackageById(TblPackage tblAdminPackage);
 
     public void updateAdminPackageById(TblPackage tblAdminPackage);
-
+ 
 }

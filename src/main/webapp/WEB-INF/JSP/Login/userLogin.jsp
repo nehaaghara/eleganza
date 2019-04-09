@@ -39,12 +39,18 @@ Author : ITMCS
         <div class="login-box">
             <div class="login-logo">
                 <b style="color:black">ELEGANZA</b>
+
             </div>
             <!-- /.login-logo -->
             <div class="login-box-body">
+                <c:if test="${not empty errorMessage}">
+                    <div class="row" style="margin-left: 0px;" id="errorMessage">
+                        <div class="col-md-12  alert alert-success">
+                            ${errorMessage}.
+                        </div>
+                    </div>
 
-
-
+                </c:if>
                 <form action="${pageContext.servletContext.contextPath}/loginpage" method="get">
                     <div class="form-group has-feedback">
                         <input type="email" class="form-control" id="emailAddress" title="emailAddress" placeholder="Enter Mail Id" name="emailAddress">
@@ -56,11 +62,11 @@ Author : ITMCS
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                         <span for="password" class="help-block"><form:errors path="password"/></span>
                     </div>
-                     <div class="row" style="float:right ; margin:0px 71px 0px 0px">
-                            <div class="col-xs-4">
-                                <button style="text-align: center; margin-left:84px" type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
-                            </div> 
-                        </div>
+                    <div class="row" style="float:right ; margin:0px 71px 0px 0px">
+                        <div class="col-xs-4">
+                            <button style="text-align: center; margin-left:84px" type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+                        </div> 
+                    </div>
                     <div class="row" style="margin:0px 0px 0px -64px ">
                         <div class="col-xs-8"> 
                             <a style=" margin-left:51px" href="${pageContext.servletContext.contextPath}/registrationindex" class="text-center">CreateNewAcount</a>
@@ -97,8 +103,7 @@ Author : ITMCS
                     increaseArea: '20%' // optional
                 });
             });
+             $("#errorMessage").delay(1000).fadeOut();
         </script>
-
-
-    </body>
+ </body>
 </html>
